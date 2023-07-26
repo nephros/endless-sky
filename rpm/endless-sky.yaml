@@ -1,0 +1,80 @@
+Name: endless-sky
+Summary: Space exploration, trading, and combat game.
+Version: 0.9.16.1
+Release: 0
+Group: Applications
+License: ASL 2.0
+URL: https://endless-sky.github.io/
+SCM: https://github.com/endless-sky/endless-sky
+Sources:
+    - '%{name}-%{version}.tar.gz'
+Description: |
+    ${summary}.
+
+    %if "%{?vendor}" == "chum"
+    PackageName: Endless Sky
+    Type: desktop-application
+    PackagerName: nephros
+    Categories:
+     - Games
+    Custom:
+      Repo: %{url}
+    Icon: https://github.com/endless-sky/endless-sky/blob/master/icons/icon_128x128.png?raw=true
+    Url:
+      Homepage: %{url}
+      Help: %{url}/discussions
+      Bugtracker: %{url}/issues
+    %endif
+
+SetupOptions: -q -n %{name}-%{version}/upstream
+RpmLintIgnore:
+  - 'summary-too-long'
+  - 'no-changelogname-tag'
+  - 'invalid-url'
+  - 'desktopfile-without-binary'
+  - 'explicit-lib-dependency'
+Macros:
+  - 'orgname;org.nephros.sailfish'
+  - 'appname;AppTemplate'
+  - 'pkgname;%{name}'
+  - 'servicebase;%{orgname}.%{appname}'
+#  - '__cmake_in_source_build;OFF'
+#  - 'foo;bar'
+#  - |
+#    spectacle_bug; hack_fix
+#    # Spectacular spectacle hack:
+#    #   abuse Macros to work around the Macro-deleting bug in 0.32
+#    #   also, add a conditional dep:
+#    %if 0%{?sailfishos_version} >= 30400
+#    BuildRequires: some-package
+#    %endif
+#Patches:
+#  - 'baz'
+#Requires:
+PkgBR:
+  - cmake
+  - gcc-c++
+  - cmake
+  # ninja-build
+  - ninja
+  - SDL2-devel
+  - libjpeg-turbo-devel
+  # openal-soft-devel
+  - OpenAL-devel
+  # libmad-devel
+PkgConfigBR:
+  # gl
+  # glew
+  - uuid
+  - libpng
+Configure: cmake
+Builder: make
+NoIconCache: true
+#BuildArch: noarch
+#AutoSubPackages:
+#  - doc
+Files:
+  - '%license LICENSE'
+  - '%{_datadir}/applications/%{name}.desktop'
+  - '%dir %{_datadir}/%{name}'
+  - '%{_datadir}/%{name}/*'
