@@ -57,8 +57,6 @@ Url:
 
 %build
 # >> build pre
-export opengl=gles
-opengl=gles scons
 # << build pre
 
 %cmake .  \
