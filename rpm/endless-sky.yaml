@@ -64,6 +64,7 @@ PkgBR:
 PkgConfigBR:
   # gl
   # glew
+  - glesv2
   - uuid
   - libpng
 Configure: none

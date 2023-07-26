@@ -21,6 +21,7 @@ URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
+BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  gcc-c++
