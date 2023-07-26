@@ -26,6 +26,7 @@ BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  cmake >= 3.21.0
 BuildRequires:  gcc-c++
+BuildRequires:  git-core
 BuildRequires:  SDL2-devel
 BuildRequires:  libjpeg-turbo-devel
 BuildRequires:  OpenAL-devel
