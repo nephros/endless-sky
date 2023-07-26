@@ -51,9 +51,9 @@ Macros:
 #  - 'baz'
 #Requires:
 PkgBR:
-  # cmake
+  - cmake
   - gcc-c++
-  - scons >= 3.1.1
+  # scons >= 3.1.1
   # ninja-build
   # ninja
   - SDL2-devel
@@ -67,7 +67,12 @@ PkgConfigBR:
   - glesv2
   - uuid
   - libpng
-Configure: none
+Configure: cmake
+ConfigOptions:
+  - '-DES_GLES=ON'
+  - '-DES_USE_SYSTEM_LIBRARIES=ON'
+  - '-DES_USE_OFFSCREEN=OFF'
+  - '-DES_CREATE_BUNDLE'
 Builder: none
 NoIconCache: true
 #BuildArch: noarch
