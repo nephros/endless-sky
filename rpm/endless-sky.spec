@@ -24,8 +24,7 @@ Source101:  endless-sky-rpmlintrc
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  gcc-c++
-BuildRequires:  scons
-BuildRequires:  ninja
+BuildRequires:  scons >= 3.1.1
 BuildRequires:  SDL2-devel
 BuildRequires:  libjpeg-turbo-devel
 BuildRequires:  OpenAL-devel
