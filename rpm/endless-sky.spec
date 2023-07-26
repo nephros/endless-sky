@@ -24,7 +24,7 @@ Source101:  endless-sky-rpmlintrc
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(libpng)
-BuildRequires:  cmake
+BuildRequires:  cmake >= 3.21.0
 BuildRequires:  gcc-c++
 BuildRequires:  SDL2-devel
 BuildRequires:  libjpeg-turbo-devel
@@ -65,6 +65,7 @@ Url:
     -DES_USE_OFFSCREEN=OFF \
     -DES_CREATE_BUNDLE=OFF
 
+make %{?_smp_mflags}
 
 # >> build post
 # << build post
@@ -73,6 +74,7 @@ Url:
 rm -rf %{buildroot}
 # >> install pre
 # << install pre
+%make_install
 
 # >> install post
 # mangle version info
