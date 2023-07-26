@@ -23,9 +23,8 @@ Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(libpng)
-BuildRequires:  cmake
 BuildRequires:  gcc-c++
-BuildRequires:  cmake
+BuildRequires:  scons
 BuildRequires:  ninja
 BuildRequires:  SDL2-devel
 BuildRequires:  libjpeg-turbo-devel
@@ -38,16 +37,15 @@ ${summary}.
 %if "%{?vendor}" == "chum"
 PackageName: Endless Sky
 Type: desktop-application
-PackagerName: nephros
+PackagedBy: nephros
 Categories:
  - Games
 Custom:
-  Repo: %{url}
+  Repo: https://github.com/endless-sky/endless-sky
+  PackagingRepo: https://github.com/nephros/endless-sky
 Icon: https://github.com/endless-sky/endless-sky/blob/master/icons/icon_128x128.png?raw=true
 Url:
   Homepage: %{url}
-  Help: %{url}/discussions
-  Bugtracker: %{url}/issues
 %endif
 
 
@@ -59,10 +57,10 @@ Url:
 
 %build
 # >> build pre
+scons
 # << build pre
 
-%cmake . 
-make %{?_smp_mflags}
+
 
 # >> build post
 # << build post
@@ -71,7 +69,6 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 # >> install pre
 # << install pre
-%make_install
 
 # >> install post
 # mangle version info

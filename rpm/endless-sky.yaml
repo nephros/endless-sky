@@ -5,7 +5,7 @@ Release: 0
 Group: Applications
 License: ASL 2.0
 URL: https://endless-sky.github.io/
-SCM: https://github.com/endless-sky/endless-sky
+SCM: https://github.com/nephros/endless-sky
 Sources:
     - '%{name}-%{version}.tar.gz'
 Description: |
@@ -14,16 +14,15 @@ Description: |
     %if "%{?vendor}" == "chum"
     PackageName: Endless Sky
     Type: desktop-application
-    PackagerName: nephros
+    PackagedBy: nephros
     Categories:
      - Games
     Custom:
-      Repo: %{url}
+      Repo: https://github.com/endless-sky/endless-sky
+      PackagingRepo: https://github.com/nephros/endless-sky
     Icon: https://github.com/endless-sky/endless-sky/blob/master/icons/icon_128x128.png?raw=true
     Url:
       Homepage: %{url}
-      Help: %{url}/discussions
-      Bugtracker: %{url}/issues
     %endif
 
 SetupOptions: -q -n %{name}-%{version}/upstream
@@ -52,9 +51,9 @@ Macros:
 #  - 'baz'
 #Requires:
 PkgBR:
-  - cmake
+  # cmake
   - gcc-c++
-  - cmake
+  - scons
   # ninja-build
   - ninja
   - SDL2-devel
@@ -67,8 +66,8 @@ PkgConfigBR:
   # glew
   - uuid
   - libpng
-Configure: cmake
-Builder: make
+Configure: none
+Builder: none
 NoIconCache: true
 #BuildArch: noarch
 #AutoSubPackages:
