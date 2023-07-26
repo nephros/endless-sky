@@ -57,7 +57,7 @@ Url:
 
 %build
 # >> build pre
-%cmake --preset linux-gles-release
+%cmake --preset linux-gles
 # << build pre
 
 %cmake .  \
