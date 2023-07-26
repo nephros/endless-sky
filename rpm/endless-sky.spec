@@ -24,8 +24,8 @@ Source101:  endless-sky-rpmlintrc
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(libpng)
+BuildRequires:  cmake
 BuildRequires:  gcc-c++
-BuildRequires:  scons >= 3.1.1
 BuildRequires:  SDL2-devel
 BuildRequires:  libjpeg-turbo-devel
 BuildRequires:  OpenAL-devel
@@ -57,10 +57,13 @@ Url:
 
 %build
 # >> build pre
-export opengl=gles
-opengl=gles scons
 # << build pre
 
+%cmake .  \
+    -DES_GLES=ON \
+    -DES_USE_SYSTEM_LIBRARIES=ON \
+    -DES_USE_OFFSCREEN=OFF \
+    -DES_CREATE_BUNDLE=OFF
 
 
 # >> build post
