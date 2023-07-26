@@ -57,13 +57,13 @@ Url:
 
 %build
 # >> build pre
+%cmake --preset linux-gles
 # << build pre
 
 %cmake .  \
     -DES_USE_VCPKG=OFF \
     -DES_GLES=ON \
-    -DES_USE_SYSTEM_LIBRARIES=OFF \
-    -DES_USE_OFFSCREEN=OFF \
+    -DES_USE_OFFSCREEN=ON \
     -DES_CREATE_BUNDLE=OFF
 
 make %{?_smp_mflags}
