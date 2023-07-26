@@ -13,10 +13,10 @@ Name:       endless-sky
 %define servicebase %{orgname}.%{appname}
 
 Summary:    Space exploration, trading, and combat game.
-Version:    0.9.16.1
+Version:    0.10.2
 Release:    0
 Group:      Applications
-License:    ASL 2.0
+License:    GPLv3
 URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml

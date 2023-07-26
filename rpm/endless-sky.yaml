@@ -1,9 +1,9 @@
 Name: endless-sky
 Summary: Space exploration, trading, and combat game.
-Version: 0.9.16.1
+Version: 0.10.2
 Release: 0
 Group: Applications
-License: ASL 2.0
+License: GPLv3
 URL: https://endless-sky.github.io/
 SCM: https://github.com/nephros/endless-sky
 Sources:
