@@ -58,7 +58,7 @@ Url:
 %build
 # >> build pre
 export opengl=gles
-scons
+opengl=gles scons
 # << build pre
 
 
