@@ -60,6 +60,7 @@ Url:
 # << build pre
 
 %cmake .  \
+    -DES_USE_VCPKG=OFF \
     -DES_GLES=ON \
     -DES_USE_SYSTEM_LIBRARIES=ON \
     -DES_USE_OFFSCREEN=OFF \
