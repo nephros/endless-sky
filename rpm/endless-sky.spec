@@ -63,7 +63,7 @@ Url:
     -DES_GLES=ON \
     -DES_USE_SYSTEM_LIBRARIES=ON \
     -DES_USE_OFFSCREEN=OFF \
-    -DES_CREATE_BUNDLE
+    -DES_CREATE_BUNDLE=OFF
 
 
 # >> build post
