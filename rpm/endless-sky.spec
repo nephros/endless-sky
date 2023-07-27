@@ -71,19 +71,30 @@ Group:      Applications
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 Requires:   %{name}-data-sounds
-Requires:   %{name}-data-images
+Requires:   %{name}-data-images1
+Requires:   %{name}-data-images2
 
 %description data
 %{summary}.
 
-%package data-images
+%package data-images1
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 
-%description data-images
+%description data-images1
+%{summary}.
+
+%package data-images2
+Summary:    Gamedata for %{name}
+License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
+Group:      Applications
+BuildArch:  noarch
+Requires:   %{name} = %{version}-%{release}
+
+%description data-images2
 %{summary}.
 
 %package data-sounds
@@ -170,14 +181,36 @@ desktop-file-install --delete-original       \
 %defattr(-,root,root,-)
 %license copyright
 %{_datadir}/%{name}/data
+%dir %{_datadir}/%{name}/images
 # >> files data
 # << files data
 
-%files data-images
+%files data-images1
 %defattr(-,root,root,-)
-%{_datadir}/%{name}/images
-# >> files data-images
-# << files data-images
+%{_datadir}/%{name}/images/_menu
+%{_datadir}/%{name}/images/asteroid
+%{_datadir}/%{name}/images/effect
+%{_datadir}/%{name}/images/font
+%{_datadir}/%{name}/images/hardpoint
+%{_datadir}/%{name}/images/icon
+%{_datadir}/%{name}/images/label
+%{_datadir}/%{name}/images/land
+# >> files data-images1
+# << files data-images1
+
+%files data-images2
+%defattr(-,root,root,-)
+%{_datadir}/%{name}/images/outfit
+%{_datadir}/%{name}/images/planet
+%{_datadir}/%{name}/images/portrait
+%{_datadir}/%{name}/images/projectile
+%{_datadir}/%{name}/images/scene
+%{_datadir}/%{name}/images/ship
+%{_datadir}/%{name}/images/star
+%{_datadir}/%{name}/images/thumbnail
+%{_datadir}/%{name}/images/ui
+# >> files data-images2
+# << files data-images2
 
 %files data-sounds
 %defattr(-,root,root,-)
