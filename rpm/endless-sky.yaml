@@ -64,19 +64,19 @@ PkgBR:
   # libmad-devel
 PkgConfigBR:
   # gl
-  # glew
+  - glew
   - glesv2
   - uuid
   - libpng
 Configure: cmake
 ConfigOptions:
-  - '--preset linux-gles'
+  - '-DCMAKE_BUILD_TYPE=Release'
+  - '-DCMAKE_COMPILE_WARNING_AS_ERROR=OFF'
   - '-DES_USE_VCPKG=OFF'
   - '-DES_GLES=ON'
-  - '-DES_USE_OFFSCREEN=ON'
   # '-DES_USE_OFFSCREEN=OFF'
   # '-DES_USE_SYSTEM_LIBRARIES=ON'
-  # '-DES_USE_SYSTEM_LIBRARIES=OFF'
+  - '-DES_USE_SYSTEM_LIBRARIES=OFF'
   - '-DES_CREATE_BUNDLE=OFF'
 Builder: none
 NoIconCache: true
