@@ -68,6 +68,7 @@ PkgConfigBR:
   # glesv2
   - uuid
   - libpng
+  - libglvnd
 Configure: cmake
 ConfigOptions:
   - '-DCMAKE_RULE_MESSAGES:BOOL=ON'
