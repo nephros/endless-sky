@@ -24,6 +24,7 @@ Source101:  endless-sky-rpmlintrc
 BuildRequires:  pkgconfig(glew)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(libpng)
+BuildRequires:  pkgconfig(libglvnd)
 BuildRequires:  cmake >= 3.21.0
 BuildRequires:  gcc-c++
 BuildRequires:  git-core
