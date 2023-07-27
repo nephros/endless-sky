@@ -21,6 +21,7 @@ URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
+BuildRequires:  pkgconfig(glew)
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(libpng)
@@ -62,10 +63,11 @@ Url:
 # << build pre
 
 %cmake .  \
-    --preset linux-gles \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF \
     -DES_USE_VCPKG=OFF \
     -DES_GLES=ON \
-    -DES_USE_OFFSCREEN=ON \
+    -DES_USE_SYSTEM_LIBRARIES=OFF \
     -DES_CREATE_BUNDLE=OFF
 
 
