@@ -77,17 +77,21 @@ ConfigOptions:
   - '-DBUILD_TESTING=OFF'
   - '-DCMAKE_COMPILE_WARNING_AS_ERROR=OFF'
   - '-DES_USE_VCPKG=OFF'
+  # OpenGL ES
   - '-DES_GLES=ON'
+  # OpenGL: use glvnd options, https://cmake.org/cmake/help/latest/module/FindOpenGL.html
   - '-DOpenGL_GL_PREFERENCE=GLVND'
   # '-DES_USE_OFFSCREEN=OFF'
   - '-DES_USE_SYSTEM_LIBRARIES=ON'
   # '-DES_USE_SYSTEM_LIBRARIES=OFF'
   - '-DES_CREATE_BUNDLE=OFF'
   - '-DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON'
+  # Needed for our custom install path from libglvnd:
   - '-DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;"'
   - '-DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"'
+  # Fix glew to not use GLU:
   - '-DGLEW_NO_GLU:BOOL=ON'
-  - '-DCMAKE_EXTRA_CFLAGS=-DGLEW_NO_GLU'
+  - '-DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU"'
 Builder: make
 NoIconCache: true
 #BuildArch: noarch

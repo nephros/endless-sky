@@ -61,7 +61,10 @@ Url:
 
 %build
 # >> build pre
+# Fix glew to not use GLU:
 export GLEW_NO_GLU=-DGLEW_NO_GLU
+export CFLAGS="$CFLAGS -DGLEW_NO_GLU"
+export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
 # << build pre
 
 %cmake .  \
@@ -78,7 +81,7 @@ export GLEW_NO_GLU=-DGLEW_NO_GLU
     -DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;" \
     -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd" \
     -DGLEW_NO_GLU:BOOL=ON \
-    -DCMAKE_EXTRA_CFLAGS=-DGLEW_NO_GLU
+    -DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU"
 
 make %{?_smp_mflags}
 
