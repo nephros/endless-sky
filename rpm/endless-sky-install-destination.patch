@@ -1,0 +1,43 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 65ecafdc..26088738 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -258,7 +258,7 @@ elseif(WIN32)
+ 	install(FILES license.txt DESTINATION .)
+ elseif(UNIX)
+ 	# Install the binary.
+-	install(TARGETS EndlessSky CONFIGURATIONS Release RUNTIME DESTINATION games)
++	install(TARGETS EndlessSky CONFIGURATIONS Release RUNTIME DESTINATION share)
+ 
+ 	# Install the desktop file.
+ 	install(FILES endless-sky.desktop DESTINATION share/applications)
+@@ -284,11 +284,11 @@ elseif(UNIX)
+ 	install(FILES ${CMAKE_CURRENT_BINARY_DIR}/endless-sky.6.gz DESTINATION share/man/man6)
+ 
+ 	# Install the resource files.
+-	install(DIRECTORY data DESTINATION share/games/endless-sky)
+-	install(DIRECTORY images DESTINATION share/games/endless-sky)
+-	install(DIRECTORY sounds DESTINATION share/games/endless-sky)
+-	install(FILES credits.txt DESTINATION share/games/endless-sky)
+-	install(FILES keys.txt DESTINATION share/games/endless-sky)
++	install(DIRECTORY data DESTINATION share/endless-sky)
++	install(DIRECTORY images DESTINATION share/endless-sky)
++	install(DIRECTORY sounds DESTINATION share/endless-sky)
++	install(FILES credits.txt DESTINATION share/endless-sky)
++	install(FILES keys.txt DESTINATION share/endless-sky)
+ 	install(FILES copyright DESTINATION share/doc/endless-sky)
+ 	install(FILES changelog DESTINATION share/doc/endless-sky)
+ 	install(FILES license.txt DESTINATION share/doc/endless-sky)
+diff --git a/source/Files.cpp b/source/Files.cpp
+index 1f721175..b01062cb 100644
+--- a/source/Files.cpp
++++ b/source/Files.cpp
+@@ -118,7 +118,7 @@ void Files::Init(const char * const *argv)
+ 	// the executable, but are under the same prefix (/usr or /usr/local).
+ 	static const string LOCAL_PATH = "/usr/local/";
+ 	static const string STANDARD_PATH = "/usr/";
+-	static const string RESOURCE_PATH = "share/games/endless-sky/";
++	static const string RESOURCE_PATH = "share/endless-sky/";
+ 	if(!resources.compare(0, LOCAL_PATH.length(), LOCAL_PATH))
+ 		resources = LOCAL_PATH + RESOURCE_PATH;
+ 	else if(!resources.compare(0, STANDARD_PATH.length(), STANDARD_PATH))
