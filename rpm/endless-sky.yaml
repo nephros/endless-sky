@@ -43,8 +43,7 @@ RpmLintIgnore:
   - 'invalid-url'
 Macros:
   - 'dataversion;%{version}'    # version data separately, so we don't have to reinstall on update.
-#Patches:
-#  - 'baz'
+  - 'finaldatadir;/home/.local/%{_datadir}' # save space on rootfs
 Requires:
   - '%{name}-data = %{dataversion}'
 PkgBR:
@@ -88,11 +87,11 @@ NoIconCache: true
 Files:
   - '%license copyright'
   - '%{_bindir}/%{name}'
-  - '%dir %{_datadir}/%{name}'
   - '%{_datadir}/%{name}/credits.txt'
   - '%{_datadir}/%{name}/keys.txt'
   - '%{_datadir}/applications/%{name}.desktop'
   - '%{_datadir}/icons/hicolor/*/apps/endless-sky.png'
+  - '%dir %{finaldatadir}/%{name}'
   # installed but useless:
   - '%exclude %{_datadir}/doc/endless-sky/*'
   - '%exclude %{_datadir}/man/man6/endless-sky.6.gz'
@@ -114,7 +113,7 @@ SubPackages:
       Files:
         - '%license copyright'
         - '%{_datadir}/%{name}/data'
-        - '%dir %{_datadir}/%{name}/images'
+        - '%dir %{finaldatadir}/%{name}/images'
     - Name: data-images1
       Version: '%{dataversion}'
       Summary: Gamedata for %{name}
@@ -122,10 +121,10 @@ SubPackages:
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%{_datadir}/%{name}/images/_menu'
-        - '%{_datadir}/%{name}/images/asteroid'
-        - '%{_datadir}/%{name}/images/effect'
-        - '%{_datadir}/%{name}/images/font'
+        - '%{finaldatadir}/%{name}/images/_menu'
+        - '%{finaldatadir}/%{name}/images/asteroid'
+        - '%{finaldatadir}/%{name}/images/effect'
+        - '%{finaldatadir}/%{name}/images/font'
     - Name: data-images2
       Version: '%{dataversion}'
       Summary: Gamedata for %{name}
@@ -133,10 +132,10 @@ SubPackages:
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%{_datadir}/%{name}/images/hardpoint'
-        - '%{_datadir}/%{name}/images/icon'
-        - '%{_datadir}/%{name}/images/label'
-        - '%{_datadir}/%{name}/images/land'
+        - '%{finaldatadir}/%{name}/images/hardpoint'
+        - '%{finaldatadir}/%{name}/images/icon'
+        - '%{finaldatadir}/%{name}/images/label'
+        - '%{finaldatadir}/%{name}/images/land'
     - Name: data-images3
       Version: '%{dataversion}'
       Summary: Gamedata for %{name}
@@ -144,10 +143,10 @@ SubPackages:
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%{_datadir}/%{name}/images/outfit'
-        - '%{_datadir}/%{name}/images/planet'
-        - '%{_datadir}/%{name}/images/portrait'
-        - '%{_datadir}/%{name}/images/projectile'
+        - '%{finaldatadir}/%{name}/images/outfit'
+        - '%{finaldatadir}/%{name}/images/planet'
+        - '%{finaldatadir}/%{name}/images/portrait'
+        - '%{finaldatadir}/%{name}/images/projectile'
     - Name: data-images4
       Version: '%{dataversion}'
       Summary: Gamedata for %{name}
@@ -155,11 +154,11 @@ SubPackages:
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%{_datadir}/%{name}/images/scene'
-        - '%{_datadir}/%{name}/images/ship'
-        - '%{_datadir}/%{name}/images/star'
-        - '%{_datadir}/%{name}/images/thumbnail'
-        - '%{_datadir}/%{name}/images/ui'
+        - '%{finaldatadir}/%{name}/images/scene'
+        - '%{finaldatadir}/%{name}/images/ship'
+        - '%{finaldatadir}/%{name}/images/star'
+        - '%{finaldatadir}/%{name}/images/thumbnail'
+        - '%{finaldatadir}/%{name}/images/ui'
     - Name: data-sounds
       Version: '%{dataversion}'
       Summary: Gamedata for %{name}
@@ -167,4 +166,4 @@ SubPackages:
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%{_datadir}/%{name}/sounds'
+        - '%{finaldatadir}/%{name}/sounds'

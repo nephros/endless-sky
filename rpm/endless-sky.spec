@@ -8,6 +8,7 @@ Name:       endless-sky
 # >> macros
 # << macros
 %define dataversion %{version}
+%define finaldatadir /home/.local/%{_datadir}
 
 Summary:    Space exploration, trading, and combat game
 Version:    0.10.2
@@ -185,6 +186,11 @@ rm -rf %{buildroot}
 # Fix invlaid entries:
 sed -i -e '/^Version.*$/d;/^SingleMainWindow/d' %{buildroot}%{_datadir}/applications/*.desktop
 %fdupes %{buildroot}%{_datadir}/%{name}/images
+# move resource data to /home/.system
+%__install -d -m 0755 "%{buildroot}%{finaldatadir}/%{name}"
+mv %{buildroot}%{_datadir}/%{name}/images %{buildroot}%{finaldatadir}/%{name}/
+mv %{buildroot}%{_datadir}/%{name}/data %{buildroot}%{finaldatadir}/%{name}/
+mv %{buildroot}%{_datadir}/%{name}/sounds %{buildroot}%{finaldatadir}/%{name}/
 # << install post
 
 desktop-file-install --delete-original       \
@@ -195,11 +201,11 @@ desktop-file-install --delete-original       \
 %defattr(-,root,root,-)
 %license copyright
 %{_bindir}/%{name}
-%dir %{_datadir}/%{name}
 %{_datadir}/%{name}/credits.txt
 %{_datadir}/%{name}/keys.txt
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/endless-sky.png
+%dir %{finaldatadir}/%{name}
 %exclude %{_datadir}/doc/endless-sky/*
 %exclude %{_datadir}/man/man6/endless-sky.6.gz
 %exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml
@@ -210,49 +216,49 @@ desktop-file-install --delete-original       \
 %defattr(-,root,root,-)
 %license copyright
 %{_datadir}/%{name}/data
-%dir %{_datadir}/%{name}/images
+%dir %{finaldatadir}/%{name}/images
 # >> files data
 # << files data
 
 %files data-images1
 %defattr(-,root,root,-)
-%{_datadir}/%{name}/images/_menu
-%{_datadir}/%{name}/images/asteroid
-%{_datadir}/%{name}/images/effect
-%{_datadir}/%{name}/images/font
+%{finaldatadir}/%{name}/images/_menu
+%{finaldatadir}/%{name}/images/asteroid
+%{finaldatadir}/%{name}/images/effect
+%{finaldatadir}/%{name}/images/font
 # >> files data-images1
 # << files data-images1
 
 %files data-images2
 %defattr(-,root,root,-)
-%{_datadir}/%{name}/images/hardpoint
-%{_datadir}/%{name}/images/icon
-%{_datadir}/%{name}/images/label
-%{_datadir}/%{name}/images/land
+%{finaldatadir}/%{name}/images/hardpoint
+%{finaldatadir}/%{name}/images/icon
+%{finaldatadir}/%{name}/images/label
+%{finaldatadir}/%{name}/images/land
 # >> files data-images2
 # << files data-images2
 
 %files data-images3
 %defattr(-,root,root,-)
-%{_datadir}/%{name}/images/outfit
-%{_datadir}/%{name}/images/planet
-%{_datadir}/%{name}/images/portrait
-%{_datadir}/%{name}/images/projectile
+%{finaldatadir}/%{name}/images/outfit
+%{finaldatadir}/%{name}/images/planet
+%{finaldatadir}/%{name}/images/portrait
+%{finaldatadir}/%{name}/images/projectile
 # >> files data-images3
 # << files data-images3
 
 %files data-images4
 %defattr(-,root,root,-)
-%{_datadir}/%{name}/images/scene
-%{_datadir}/%{name}/images/ship
-%{_datadir}/%{name}/images/star
-%{_datadir}/%{name}/images/thumbnail
-%{_datadir}/%{name}/images/ui
+%{finaldatadir}/%{name}/images/scene
+%{finaldatadir}/%{name}/images/ship
+%{finaldatadir}/%{name}/images/star
+%{finaldatadir}/%{name}/images/thumbnail
+%{finaldatadir}/%{name}/images/ui
 # >> files data-images4
 # << files data-images4
 
 %files data-sounds
 %defattr(-,root,root,-)
-%{_datadir}/%{name}/sounds
+%{finaldatadir}/%{name}/sounds
 # >> files data-sounds
 # << files data-sounds
