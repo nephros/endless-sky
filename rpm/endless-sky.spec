@@ -58,10 +58,10 @@ Url:
 
 %build
 # >> build pre
-%cmake --preset linux-gles
 # << build pre
 
 %cmake .  \
+    --preset linux-gles \
     -DES_USE_VCPKG=OFF \
     -DES_GLES=ON \
     -DES_USE_OFFSCREEN=ON \
