@@ -81,7 +81,8 @@ export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
     -DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;" \
     -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd" \
     -DGLEW_NO_GLU:BOOL=ON \
-    -DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU"
+    -DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU" \
+    -DCMAKE_CXX_CFLAGS="${CMAKE_CXX_CFLAGS} -DGLEW_NO_GLU"
 
 make %{?_smp_mflags}
 
@@ -95,6 +96,8 @@ rm -rf %{buildroot}
 %make_install
 
 # >> install post
+# Fix invlaid entries:
+sed -i -e '/^Version.*$/d;/^SingleMainWindow/d' %{buildroot}%{_datadir}/applications/*.desktop
 # << install post
 
 desktop-file-install --delete-original       \
