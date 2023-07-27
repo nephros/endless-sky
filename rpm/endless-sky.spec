@@ -61,6 +61,7 @@ Url:
 
 %build
 # >> build pre
+export GLEW_NO_GLU=-DGLEW_NO_GLU
 # << build pre
 
 %cmake .  \
@@ -75,7 +76,9 @@ Url:
     -DES_CREATE_BUNDLE=OFF \
     -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON \
     -DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;" \
-    -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"
+    -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd" \
+    -DGLEW_NO_GLU:BOOL=ON \
+    -DCMAKE_EXTRA_CFLAGS=-DGLEW_NO_GLU
 
 make %{?_smp_mflags}
 
