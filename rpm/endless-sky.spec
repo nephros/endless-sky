@@ -95,6 +95,8 @@ make %{?_smp_mflags}
 %install
 rm -rf %{buildroot}
 # >> install pre
+%__install -d -m 0755 "%{buildroot}%{_datadir}/%{name}"
+
 # << install pre
 %make_install
 
