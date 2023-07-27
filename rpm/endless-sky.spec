@@ -66,6 +66,7 @@ Url:
 
 %package data
 Summary:    Gamedata for %{name}
+License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
 Requires:   %{name} = %{version}-%{release}
 
@@ -141,6 +142,7 @@ desktop-file-install --delete-original       \
 
 %files data
 %defattr(-,root,root,-)
+%license copyright
 %dir %{_datadir}/%{name}/data
 %{_datadir}/%{name}/data/*
 %dir %{_datadir}/%{name}/images
