@@ -29,6 +29,7 @@ BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  pkgconfig(libglvnd)
+BuildRequires:  fdupes
 BuildRequires:  cmake >= 3.21.0
 BuildRequires:  gcc-c++
 BuildRequires:  git-core
@@ -185,6 +186,7 @@ rm -rf %{buildroot}
 # >> install post
 # Fix invlaid entries:
 sed -i -e '/^Version.*$/d;/^SingleMainWindow/d' %{buildroot}%{_datadir}/applications/*.desktop
+%fdupes %{buildroot}%{_datadir}/%{name}/images
 # << install post
 
 desktop-file-install --delete-original       \

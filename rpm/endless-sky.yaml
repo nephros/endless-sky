@@ -64,6 +64,7 @@ Macros:
 Requires:
   - '%{name}-data = %{dataversion}'
 PkgBR:
+  - fdupes
   - cmake >= 3.21.0
   - gcc-c++
   - git-core
