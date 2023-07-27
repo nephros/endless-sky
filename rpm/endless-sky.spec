@@ -106,9 +106,13 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%license LICENSE
 %{_datadir}/applications/%{name}.desktop
-%dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*
+%dir %{_datadir}/games/%{name}
+%{_datadir}/games/%{name}/*
+%{_prefix}/games/endless-sky
+%exclude %{_datadir}/doc/endless-sky/*
+%{_datadir}//icons/hicolor/*/apps/endless-sky.png
+%exclude %{_datadir}/man/man6/endless-sky.6.gz
+%exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml
 # >> files
 # << files
