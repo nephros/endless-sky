@@ -76,6 +76,7 @@ Url:
     -DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;" \
     -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"
 
+make %{?_smp_mflags}
 
 # >> build post
 # << build post
@@ -84,10 +85,9 @@ Url:
 rm -rf %{buildroot}
 # >> install pre
 # << install pre
+%make_install
 
 # >> install post
-# mangle version info
-sed -i -e "s/unreleased/%{version}/" %{buildroot}%{_datadir}/%{name}/qml/%{name}.qml
 # << install post
 
 desktop-file-install --delete-original       \
