@@ -85,7 +85,7 @@ ConfigOptions:
   - '-DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON'
   - '-DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;"'
   - '-DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"'
-Builder: none
+Builder: make
 NoIconCache: true
 #BuildArch: noarch
 #AutoSubPackages:
