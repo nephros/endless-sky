@@ -62,12 +62,15 @@ Url:
 # << build pre
 
 %cmake .  \
+    -DCMAKE_RULE_MESSAGES:BOOL=ON \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF \
     -DES_USE_VCPKG=OFF \
     -DES_GLES=ON \
     -DES_USE_SYSTEM_LIBRARIES=ON \
-    -DES_CREATE_BUNDLE=OFF
+    -DES_CREATE_BUNDLE=OFF \
+    -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON \
+    -DCMAKE_PREFIX_PATH=%{_libdir}/glvnd
 
 
 # >> build post
