@@ -65,7 +65,7 @@ Url:
 
 
 %package data
-Summary:    Game data for %{name}
+Summary:    Gamedata for %{name}
 Group:      Applications
 Requires:   %{name} = %{version}-%{release}
 
@@ -131,9 +131,8 @@ desktop-file-install --delete-original       \
 %defattr(-,root,root,-)
 %{_datadir}/applications/%{name}.desktop
 %dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*
-%{_prefix}/endless-sky
-%{_datadir}//icons/hicolor/*/apps/endless-sky.png
+%{_bindir}/endless-sky
+%{_datadir}/icons/hicolor/*/apps/endless-sky.png
 %exclude %{_datadir}/doc/endless-sky/*
 %exclude %{_datadir}/man/man6/endless-sky.6.gz
 %exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml

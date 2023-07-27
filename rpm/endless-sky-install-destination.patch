@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 65ecafdc..26088738 100644
+index 65ecafdc..70817331 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -258,7 +258,7 @@ elseif(WIN32)
@@ -7,7 +7,7 @@ index 65ecafdc..26088738 100644
  elseif(UNIX)
  	# Install the binary.
 -	install(TARGETS EndlessSky CONFIGURATIONS Release RUNTIME DESTINATION games)
-+	install(TARGETS EndlessSky CONFIGURATIONS Release RUNTIME DESTINATION share)
++	install(TARGETS EndlessSky CONFIGURATIONS Release RUNTIME DESTINATION bin)
  
  	# Install the desktop file.
  	install(FILES endless-sky.desktop DESTINATION share/applications)

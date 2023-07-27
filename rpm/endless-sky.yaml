@@ -108,14 +108,11 @@ ConfigOptions:
 Builder: make
 NoIconCache: true
 #BuildArch: noarch
-#AutoSubPackages:
-#  - doc
 Files:
   - '%{_datadir}/applications/%{name}.desktop'
   - '%dir %{_datadir}/%{name}'
-  - '%{_datadir}/%{name}/*'
-  - '%{_prefix}/endless-sky'
-  - '%{_datadir}//icons/hicolor/*/apps/endless-sky.png'
+  - '%{_bindir}/endless-sky'
+  - '%{_datadir}/icons/hicolor/*/apps/endless-sky.png'
   # installed but useless:
   - '%exclude %{_datadir}/doc/endless-sky/*'
   - '%exclude %{_datadir}/man/man6/endless-sky.6.gz'
@@ -124,7 +121,7 @@ Files:
 
 SubPackages:
     - Name: data
-      Summary: Game data for %{name}
+      Summary: Gamedata for %{name}
       Group: Applications
       Files:
         - '%dir %{_datadir}/%{name}/data'
