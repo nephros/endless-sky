@@ -21,6 +21,7 @@ URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
+Patch0:     %{name}-install-destination.patch
 BuildRequires:  pkgconfig(glew)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
@@ -56,6 +57,8 @@ Url:
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
+# %{name}-install-destination.patch
+%patch0 -p1
 # >> setup
 # << setup
 
@@ -107,11 +110,11 @@ desktop-file-install --delete-original       \
 %files
 %defattr(-,root,root,-)
 %{_datadir}/applications/%{name}.desktop
-%dir %{_datadir}/games/%{name}
-%{_datadir}/games/%{name}/*
-%{_prefix}/games/endless-sky
-%exclude %{_datadir}/doc/endless-sky/*
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/*
+%{_prefix}/endless-sky
 %{_datadir}//icons/hicolor/*/apps/endless-sky.png
+%exclude %{_datadir}/doc/endless-sky/*
 %exclude %{_datadir}/man/man6/endless-sky.6.gz
 %exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml
 # >> files
