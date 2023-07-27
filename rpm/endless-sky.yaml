@@ -99,7 +99,6 @@ NoIconCache: true
 #AutoSubPackages:
 #  - doc
 Files:
-  - '%license LICENSE'
   - '%{_datadir}/applications/%{name}.desktop'
-  - '%dir %{_datadir}/%{name}'
-  - '%{_datadir}/%{name}/*'
+  - '%dir %{_datadir}/games/%{name}'
+  - '%{_datadir}/games/%{name}/*'

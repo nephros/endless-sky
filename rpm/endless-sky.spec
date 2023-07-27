@@ -106,9 +106,8 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%license LICENSE
 %{_datadir}/applications/%{name}.desktop
-%dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*
+%dir %{_datadir}/games/%{name}
+%{_datadir}/games/%{name}/*
 # >> files
 # << files
