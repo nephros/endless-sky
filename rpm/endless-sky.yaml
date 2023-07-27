@@ -70,6 +70,7 @@ PkgConfigBR:
   - libpng
 Configure: cmake
 ConfigOptions:
+  - '--preset linux-gles'
   - '-DES_USE_VCPKG=OFF'
   - '-DES_GLES=ON'
   - '-DES_USE_OFFSCREEN=ON'
