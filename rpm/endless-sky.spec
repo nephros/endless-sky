@@ -72,8 +72,8 @@ Url:
     -DES_USE_SYSTEM_LIBRARIES=ON \
     -DES_CREATE_BUNDLE=OFF \
     -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON \
-    -DCMAKE_PREFIX_PATH="%{_libdir}/glvndv;%{_libdir}/pkgconfig/glvndv;" \
-    -DCMAKE_INCLUDE_PATH="%{_includedir}/glvndv"
+    -DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;" \
+    -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"
 
 
 # >> build post
