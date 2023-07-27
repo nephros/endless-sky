@@ -16,7 +16,7 @@ Summary:    Space exploration, trading, and combat game.
 Version:    0.10.2
 Release:    0
 Group:      Applications
-License:    GPLv3
+License:    GPLv3+
 URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
@@ -38,14 +38,23 @@ BuildRequires:  OpenAL-devel
 BuildRequires:  desktop-file-utils
 
 %description
-${summary}.
+Endless Sky is a 2D space trading and combat game similar to the classic
+Escape Velocity series. Explore other star systems.
+
+Earn money by trading, carrying passengers, or completing missions. Use
+your earnings to buy a better ship or to upgrade the weapons and engines on
+your current one.
+
+Blow up pirates. Take sides in a civil war. Or leave human space behind and
+hope to find friendly aliens whose culture is more civilized than your own.
 
 %if "%{?vendor}" == "chum"
 PackageName: Endless Sky
 Type: desktop-application
+DeveloperName: Michael Zahniser
 PackagedBy: nephros
 Categories:
- - Games
+  - Games
 Custom:
   Repo: https://github.com/endless-sky/endless-sky
   PackagingRepo: https://github.com/nephros/endless-sky
