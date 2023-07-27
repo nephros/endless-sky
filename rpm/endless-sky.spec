@@ -148,6 +148,8 @@ Requires:   %{name} = %{version}-%{release}
 export GLEW_NO_GLU=-DGLEW_NO_GLU
 export CFLAGS="$CFLAGS -DGLEW_NO_GLU"
 export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
+rpm -qv cmake
+cmake --version
 # << build pre
 
 %cmake .  \
