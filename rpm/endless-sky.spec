@@ -64,6 +64,7 @@ Url:
 # Fix glew to not use GLU:
 export GLEW_NO_GLU=-DGLEW_NO_GLU
 export CFLAGS="$CFLAGS -DGLEW_NO_GLU"
+export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
 # << build pre
 
 %cmake .  \
