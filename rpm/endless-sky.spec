@@ -27,6 +27,7 @@ BuildRequires:  pkgconfig(libpng)
 BuildRequires:  cmake >= 3.21.0
 BuildRequires:  gcc-c++
 BuildRequires:  git-core
+BuildRequires:  ninja
 BuildRequires:  SDL2-devel
 BuildRequires:  libjpeg-turbo-devel
 BuildRequires:  OpenAL-devel
@@ -67,7 +68,6 @@ Url:
     -DES_USE_OFFSCREEN=ON \
     -DES_CREATE_BUNDLE=OFF
 
-make %{?_smp_mflags}
 
 # >> build post
 # << build post
@@ -76,7 +76,6 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 # >> install pre
 # << install pre
-%make_install
 
 # >> install post
 # mangle version info
