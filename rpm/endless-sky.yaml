@@ -48,8 +48,7 @@ Requires:
   - '%{name}-data = %{dataversion}'
 PkgBR:
   - fdupes
-  - cmake >= 3.21
-  - cmake <= 3.25
+  - cmake >= 3.21 , cmake <= 3.25
   - gcc-c++
   - git-core
   - ninja
