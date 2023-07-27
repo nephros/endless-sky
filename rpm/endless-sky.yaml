@@ -67,6 +67,7 @@ PkgConfigBR:
   - glew
   # glesv2
   - uuid
+  - mad
   - libpng
   - libglvnd
 Configure: cmake
