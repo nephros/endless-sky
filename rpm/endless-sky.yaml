@@ -109,6 +109,7 @@ Builder: make
 NoIconCache: true
 #BuildArch: noarch
 Files:
+  - '%license copyright'
   - '%{_bindir}/%{name}'
   - '%dir %{_datadir}/%{name}'
   - '%{_datadir}/%{name}/credits.txt'
@@ -131,21 +132,18 @@ SubPackages:
         - '%{name}-data-images'
       Files:
         - '%license copyright'
-        - '%dir %{_datadir}/%{name}/data'
-        - '%{_datadir}/%{name}/data/*'
+        - '%{_datadir}/%{name}/data'
     - Name: data-images
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%dir %{_datadir}/%{name}/images'
-        - '%{_datadir}/%{name}/images/*'
+        - '%{_datadir}/%{name}/images'
     - Name: data-sounds
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%dir %{_datadir}/%{name}/sounds'
-        - '%{_datadir}/%{name}/sounds/*'
+        - '%{_datadir}/%{name}/sounds'

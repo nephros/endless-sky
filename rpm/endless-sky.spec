@@ -153,6 +153,7 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
+%license copyright
 %{_bindir}/%{name}
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/credits.txt
@@ -168,21 +169,18 @@ desktop-file-install --delete-original       \
 %files data
 %defattr(-,root,root,-)
 %license copyright
-%dir %{_datadir}/%{name}/data
-%{_datadir}/%{name}/data/*
+%{_datadir}/%{name}/data
 # >> files data
 # << files data
 
 %files data-images
 %defattr(-,root,root,-)
-%dir %{_datadir}/%{name}/images
-%{_datadir}/%{name}/images/*
+%{_datadir}/%{name}/images
 # >> files data-images
 # << files data-images
 
 %files data-sounds
 %defattr(-,root,root,-)
-%dir %{_datadir}/%{name}/sounds
-%{_datadir}/%{name}/sounds/*
+%{_datadir}/%{name}/sounds
 # >> files data-sounds
 # << files data-sounds
