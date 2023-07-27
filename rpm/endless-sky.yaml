@@ -109,9 +109,11 @@ Builder: make
 NoIconCache: true
 #BuildArch: noarch
 Files:
-  - '%{_datadir}/applications/%{name}.desktop'
+  - '%{_bindir}/%{name}'
   - '%dir %{_datadir}/%{name}'
-  - '%{_bindir}/endless-sky'
+  - '%{_datadir}/%{name}/credits.txt'
+  - '%{_datadir}/%{name}/keys.txt'
+  - '%{_datadir}/applications/%{name}.desktop'
   - '%{_datadir}/icons/hicolor/*/apps/endless-sky.png'
   # installed but useless:
   - '%exclude %{_datadir}/doc/endless-sky/*'
@@ -132,3 +134,7 @@ SubPackages:
         - '%{_datadir}/%{name}/images/*'
         - '%dir %{_datadir}/%{name}/sounds'
         - '%{_datadir}/%{name}/sounds/*'
+        # installed but useless:
+        - '%exclude %{_datadir}/doc/endless-sky/*'
+        - '%exclude %{_datadir}/man/man6/endless-sky.6.gz'
+        - '%exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml'

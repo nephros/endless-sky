@@ -130,9 +130,11 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%{_datadir}/applications/%{name}.desktop
+%{_bindir}/%{name}
 %dir %{_datadir}/%{name}
-%{_bindir}/endless-sky
+%{_datadir}/%{name}/credits.txt
+%{_datadir}/%{name}/keys.txt
+%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/endless-sky.png
 %exclude %{_datadir}/doc/endless-sky/*
 %exclude %{_datadir}/man/man6/endless-sky.6.gz
@@ -149,5 +151,8 @@ desktop-file-install --delete-original       \
 %{_datadir}/%{name}/images/*
 %dir %{_datadir}/%{name}/sounds
 %{_datadir}/%{name}/sounds/*
+%exclude %{_datadir}/doc/endless-sky/*
+%exclude %{_datadir}/man/man6/endless-sky.6.gz
+%exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml
 # >> files data
 # << files data
