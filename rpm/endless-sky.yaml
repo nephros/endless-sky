@@ -65,7 +65,7 @@ PkgBR:
 PkgConfigBR:
   # gl
   - glew
-  - glesv2
+  # glesv2
   - uuid
   - libpng
 Configure: cmake

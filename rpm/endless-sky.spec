@@ -22,7 +22,6 @@ Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
 BuildRequires:  pkgconfig(glew)
-BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  cmake >= 3.21.0
