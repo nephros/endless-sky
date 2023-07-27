@@ -2,5 +2,3 @@ from Config import *
 addFilter("summary-too-long")
 addFilter("no-changelogname-tag")
 addFilter("invalid-url")
-addFilter("desktopfile-without-binary")
-addFilter("explicit-lib-dependency")

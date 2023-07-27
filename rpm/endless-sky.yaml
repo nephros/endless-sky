@@ -41,24 +41,8 @@ RpmLintIgnore:
   - 'summary-too-long'
   - 'no-changelogname-tag'
   - 'invalid-url'
-  - 'desktopfile-without-binary'
-  - 'explicit-lib-dependency'
 Macros:
   - 'dataversion;%{version}'    # version data separately, so we don't have to reinstall on update.
-  - 'orgname;org.nephros.sailfish'
-  - 'appname;AppTemplate'
-  - 'pkgname;%{name}'
-  - 'servicebase;%{orgname}.%{appname}'
-#  - '__cmake_in_source_build;OFF'
-#  - 'foo;bar'
-#  - |
-#    spectacle_bug; hack_fix
-#    # Spectacular spectacle hack:
-#    #   abuse Macros to work around the Macro-deleting bug in 0.32
-#    #   also, add a conditional dep:
-#    %if 0%{?sailfishos_version} >= 30400
-#    BuildRequires: some-package
-#    %endif
 #Patches:
 #  - 'baz'
 Requires:
@@ -68,22 +52,16 @@ PkgBR:
   - cmake >= 3.21.0
   - gcc-c++
   - git-core
-  # scons >= 3.1.1
-  # ninja-build
   - ninja
   - SDL2-devel
   - libjpeg-turbo-devel
-  # openal-soft-devel
   - OpenAL-devel
-  # libmad-devel
 PkgConfigBR:
-  # gl
   - glew
-  # glesv2
+  - libglvnd
   - uuid
   - mad
   - libpng
-  - libglvnd
 Configure: cmake
 ConfigOptions:
   - '-DCMAKE_RULE_MESSAGES:BOOL=ON'
@@ -95,21 +73,17 @@ ConfigOptions:
   - '-DES_GLES=ON'
   # OpenGL: use glvnd options, https://cmake.org/cmake/help/latest/module/FindOpenGL.html
   - '-DOpenGL_GL_PREFERENCE=GLVND'
-  # '-DES_USE_OFFSCREEN=OFF'
   - '-DES_USE_SYSTEM_LIBRARIES=ON'
-  # '-DES_USE_SYSTEM_LIBRARIES=OFF'
   - '-DES_CREATE_BUNDLE=OFF'
   - '-DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON'
   # Needed for our custom install path from libglvnd:
   - '-DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;"'
   - '-DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"'
   # Fix glew to not use GLU:
-  - '-DGLEW_NO_GLU:BOOL=ON'
   - '-DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU"'
   - '-DCMAKE_CXX_CFLAGS="${CMAKE_CXX_CFLAGS} -DGLEW_NO_GLU"'
 Builder: make
 NoIconCache: true
-#BuildArch: noarch
 Files:
   - '%license copyright'
   - '%{_bindir}/%{name}'

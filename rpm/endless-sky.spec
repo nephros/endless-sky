@@ -8,10 +8,6 @@ Name:       endless-sky
 # >> macros
 # << macros
 %define dataversion %{version}
-%define orgname org.nephros.sailfish
-%define appname AppTemplate
-%define pkgname %{name}
-%define servicebase %{orgname}.%{appname}
 
 Summary:    Space exploration, trading, and combat game
 Version:    0.10.2
@@ -25,10 +21,10 @@ Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-install-destination.patch
 Requires:   %{name}-data = %{dataversion}
 BuildRequires:  pkgconfig(glew)
+BuildRequires:  pkgconfig(libglvnd)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
 BuildRequires:  pkgconfig(libpng)
-BuildRequires:  pkgconfig(libglvnd)
 BuildRequires:  fdupes
 BuildRequires:  cmake >= 3.21.0
 BuildRequires:  gcc-c++
@@ -166,7 +162,6 @@ export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
     -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON \
     -DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;" \
     -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd" \
-    -DGLEW_NO_GLU:BOOL=ON \
     -DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU" \
     -DCMAKE_CXX_CFLAGS="${CMAKE_CXX_CFLAGS} -DGLEW_NO_GLU"
 
