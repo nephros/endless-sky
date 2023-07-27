@@ -22,6 +22,7 @@ Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-install-destination.patch
+Requires:   %{name}-data
 BuildRequires:  pkgconfig(glew)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
@@ -53,6 +54,14 @@ Url:
   Homepage: %{url}
 %endif
 
+
+%package data
+Summary:    Game data for %{name}
+Group:      Applications
+Requires:   %{name} = %{version}-%{release}
+
+%description data
+%{summary}.
 
 %prep
 %setup -q -n %{name}-%{version}/upstream
@@ -121,3 +130,14 @@ desktop-file-install --delete-original       \
 %exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml
 # >> files
 # << files
+
+%files data
+%defattr(-,root,root,-)
+%dir %{_datadir}/%{name}/data
+%{_datadir}/%{name}/data/*
+%dir %{_datadir}/%{name}/images
+%{_datadir}/%{name}/images/*
+%dir %{_datadir}/%{name}/sounds
+%{_datadir}/%{name}/sounds/*
+# >> files data
+# << files data
