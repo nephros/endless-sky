@@ -131,6 +131,8 @@ SubPackages:
         - '%{name}-data-sounds'
         - '%{name}-data-images1'
         - '%{name}-data-images2'
+        - '%{name}-data-images3'
+        - '%{name}-data-images4'
       Files:
         - '%license copyright'
         - '%{_datadir}/%{name}/data'
@@ -145,11 +147,17 @@ SubPackages:
         - '%{_datadir}/%{name}/images/asteroid'
         - '%{_datadir}/%{name}/images/effect'
         - '%{_datadir}/%{name}/images/font'
+    - Name: data-images2
+      Summary: Gamedata for %{name}
+      Group: Applications
+      License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
+      BuildArch: noarch
+      Files:
         - '%{_datadir}/%{name}/images/hardpoint'
         - '%{_datadir}/%{name}/images/icon'
         - '%{_datadir}/%{name}/images/label'
         - '%{_datadir}/%{name}/images/land'
-    - Name: data-images2
+    - Name: data-images3
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
@@ -159,6 +167,12 @@ SubPackages:
         - '%{_datadir}/%{name}/images/planet'
         - '%{_datadir}/%{name}/images/portrait'
         - '%{_datadir}/%{name}/images/projectile'
+    - Name: data-images4
+      Summary: Gamedata for %{name}
+      Group: Applications
+      License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
+      BuildArch: noarch
+      Files:
         - '%{_datadir}/%{name}/images/scene'
         - '%{_datadir}/%{name}/images/ship'
         - '%{_datadir}/%{name}/images/star'
