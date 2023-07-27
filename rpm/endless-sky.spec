@@ -68,9 +68,32 @@ Url:
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
+BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
+Requires:   %{name}-data-sounds
+Requires:   %{name}-data-images
 
 %description data
+%{summary}.
+
+%package data-images
+Summary:    Gamedata for %{name}
+License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
+Group:      Applications
+BuildArch:  noarch
+Requires:   %{name} = %{version}-%{release}
+
+%description data-images
+%{summary}.
+
+%package data-sounds
+Summary:    Gamedata for %{name}
+License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
+Group:      Applications
+BuildArch:  noarch
+Requires:   %{name} = %{version}-%{release}
+
+%description data-sounds
 %{summary}.
 
 %prep
@@ -147,12 +170,19 @@ desktop-file-install --delete-original       \
 %license copyright
 %dir %{_datadir}/%{name}/data
 %{_datadir}/%{name}/data/*
-%dir %{_datadir}/%{name}/images
-%{_datadir}/%{name}/images/*
-%dir %{_datadir}/%{name}/sounds
-%{_datadir}/%{name}/sounds/*
-%exclude %{_datadir}/doc/endless-sky/*
-%exclude %{_datadir}/man/man6/endless-sky.6.gz
-%exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml
 # >> files data
 # << files data
+
+%files data-images
+%defattr(-,root,root,-)
+%dir %{_datadir}/%{name}/images
+%{_datadir}/%{name}/images/*
+# >> files data-images
+# << files data-images
+
+%files data-sounds
+%defattr(-,root,root,-)
+%dir %{_datadir}/%{name}/sounds
+%{_datadir}/%{name}/sounds/*
+# >> files data-sounds
+# << files data-sounds
