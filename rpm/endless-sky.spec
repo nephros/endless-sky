@@ -7,6 +7,7 @@ Name:       endless-sky
 
 # >> macros
 # << macros
+%define dataversion %{version}
 %define orgname org.nephros.sailfish
 %define appname AppTemplate
 %define pkgname %{name}
@@ -22,7 +23,7 @@ Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-install-destination.patch
-Requires:   %{name}-data
+Requires:   %{name}-data = %{dataversion}
 BuildRequires:  pkgconfig(glew)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
@@ -68,13 +69,14 @@ Url:
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
+Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
-Requires:   %{name}-data-sounds
-Requires:   %{name}-data-images1
-Requires:   %{name}-data-images2
-Requires:   %{name}-data-images3
-Requires:   %{name}-data-images4
+Requires:   %{name}-data-sounds  = %{dataversion}
+Requires:   %{name}-data-images1 = %{dataversion}
+Requires:   %{name}-data-images2 = %{dataversion}
+Requires:   %{name}-data-images3 = %{dataversion}
+Requires:   %{name}-data-images4 = %{dataversion}
 
 %description data
 %{summary}.
@@ -83,6 +85,7 @@ Requires:   %{name}-data-images4
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
+Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 
@@ -93,6 +96,7 @@ Requires:   %{name} = %{version}-%{release}
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
+Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 
@@ -103,6 +107,7 @@ Requires:   %{name} = %{version}-%{release}
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
+Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 
@@ -113,6 +118,7 @@ Requires:   %{name} = %{version}-%{release}
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
+Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 
@@ -123,6 +129,7 @@ Requires:   %{name} = %{version}-%{release}
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
+Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
 

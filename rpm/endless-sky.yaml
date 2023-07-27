@@ -44,6 +44,7 @@ RpmLintIgnore:
   - 'desktopfile-without-binary'
   - 'explicit-lib-dependency'
 Macros:
+  - 'dataversion;%{version}'    # version data separately, so we don't have to reinstall on update.
   - 'orgname;org.nephros.sailfish'
   - 'appname;AppTemplate'
   - 'pkgname;%{name}'
@@ -61,7 +62,7 @@ Macros:
 #Patches:
 #  - 'baz'
 Requires:
-  - '%{name}-data'
+  - '%{name}-data = %{dataversion}'
 PkgBR:
   - cmake >= 3.21.0
   - gcc-c++
@@ -123,21 +124,23 @@ Files:
 
 SubPackages:
     - Name: data
+      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Requires:
-        - '%{name}-data-sounds'
-        - '%{name}-data-images1'
-        - '%{name}-data-images2'
-        - '%{name}-data-images3'
-        - '%{name}-data-images4'
+        - '%{name}-data-sounds  = %{dataversion}'
+        - '%{name}-data-images1 = %{dataversion}'
+        - '%{name}-data-images2 = %{dataversion}'
+        - '%{name}-data-images3 = %{dataversion}'
+        - '%{name}-data-images4 = %{dataversion}'
       Files:
         - '%license copyright'
         - '%{_datadir}/%{name}/data'
         - '%dir %{_datadir}/%{name}/images'
     - Name: data-images1
+      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
@@ -148,6 +151,7 @@ SubPackages:
         - '%{_datadir}/%{name}/images/effect'
         - '%{_datadir}/%{name}/images/font'
     - Name: data-images2
+      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
@@ -158,6 +162,7 @@ SubPackages:
         - '%{_datadir}/%{name}/images/label'
         - '%{_datadir}/%{name}/images/land'
     - Name: data-images3
+      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
@@ -168,6 +173,7 @@ SubPackages:
         - '%{_datadir}/%{name}/images/portrait'
         - '%{_datadir}/%{name}/images/projectile'
     - Name: data-images4
+      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
@@ -179,6 +185,7 @@ SubPackages:
         - '%{_datadir}/%{name}/images/thumbnail'
         - '%{_datadir}/%{name}/images/ui'
     - Name: data-sounds
+      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
