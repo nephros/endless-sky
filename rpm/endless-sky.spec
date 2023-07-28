@@ -214,7 +214,7 @@ desktop-file-install --delete-original       \
 %files data
 %defattr(-,root,root,-)
 %license copyright
-%{_datadir}/%{name}/data
+%{finaldatadir}/%{name}/data
 %dir %{finaldatadir}/%{name}/images
 # >> files data
 # << files data

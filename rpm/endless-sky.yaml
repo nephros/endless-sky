@@ -111,7 +111,7 @@ SubPackages:
         - '%{name}-data-images4 = %{dataversion}'
       Files:
         - '%license copyright'
-        - '%{_datadir}/%{name}/data'
+        - '%{finaldatadir}/%{name}/data'
         - '%dir %{finaldatadir}/%{name}/images'
     - Name: data-images1
       Version: '%{dataversion}'
