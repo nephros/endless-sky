@@ -19,9 +19,9 @@ URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
-Patch0:     %{name}-install-destination.patch
-Patch1:     %{name}-cmake319.patch
-BuildRequires:  pkgconfig(glew)
+Patch0:     %{name}-cmake-no-glew.patch
+Patch1:     %{name}-install-destination.patch
+Patch2:     %{name}-cmake319.patch
 BuildRequires:  pkgconfig(libglvnd)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
@@ -140,10 +140,12 @@ Requires:   %{name} = %{version}-%{release}
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
-# %{name}-install-destination.patch
+# %{name}-cmake-no-glew.patch
 %patch0 -p1
-# %{name}-cmake319.patch
+# %{name}-install-destination.patch
 %patch1 -p1
+# %{name}-cmake319.patch
+%patch2 -p1
 # >> setup
 # << setup
 
