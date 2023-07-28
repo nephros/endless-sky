@@ -71,6 +71,8 @@ PkgConfigBR:
 Configure: cmake
 ConfigOptions:
   - '-G Ninja'
+  - '-DSAILFISHOS=ON'
+  - '-DCMAKE_RULE_MESSAGES=ON'
   - '-DCMAKE_BUILD_TYPE=Release'
   - '-DCMAKE_COLOR_DIAGNOSTICS=OFF'
   - '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
