@@ -150,6 +150,8 @@ export CFLAGS="$CFLAGS -DGLEW_NO_GLU"
 export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
 rpm -qv cmake
 cmake --version
+command -v cmake
+rpm -ql cmake | grep bin
 # << build pre
 
 %cmake .  \
