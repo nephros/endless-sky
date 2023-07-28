@@ -152,6 +152,7 @@ rpm -qv cmake
 cmake --version
 command -v cmake
 rpm -ql cmake | grep bin
+rpm -qV --noscripts cmake -v
 # << build pre
 
 %cmake .  \
