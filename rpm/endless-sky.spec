@@ -151,10 +151,6 @@ Requires:   %{name} = %{version}-%{release}
 
 %build
 # >> build pre
-# Fix glew to not use GLU:
-export GLEW_NO_GLU=-DGLEW_NO_GLU
-export CFLAGS="$CFLAGS -DGLEW_NO_GLU"
-export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
 # << build pre
 
 %cmake .  \
@@ -174,9 +170,7 @@ export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
     -DES_CREATE_BUNDLE=OFF \
     -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON \
     -DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;" \
-    -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd" \
-    -DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU" \
-    -DCMAKE_CXX_CFLAGS="${CMAKE_CXX_CFLAGS} -DGLEW_NO_GLU"
+    -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"
 
 
 # >> build post
