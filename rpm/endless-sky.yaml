@@ -1,6 +1,6 @@
 Name: endless-sky
 Summary: Space exploration, trading, and combat game
-Version: 0.10.2
+Version: 0.10.2 # !! remember to update the metadata version below as well!
 Release: 0
 Group: Applications
 License: GPLv3+
@@ -8,6 +8,13 @@ URL: https://endless-sky.github.io/
 SCM: https://github.com/nephros/endless-sky
 Sources:
     - '%{name}-%{version}.tar.gz'
+Macros:
+    # version data separately, so we don't have to reinstall on update.
+    # OBS mangles Version with git tags and commits, so we can't use the version macro
+  - 'dataversion;0.10.2'
+    # save space on rootfs.
+    # We should use /home/.system, BUT that has drwx------ root:root permissions ;)
+  - 'finaldatadir;/home/.local/share/%{name}'
 Patches:
    # see https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
    - '%{name}-cmake319.patch'
@@ -48,10 +55,6 @@ RpmLintIgnore:
   - 'summary-too-long'
   - 'no-changelogname-tag'
   - 'invalid-url'
-Macros:
-  - 'dataversion;%{version}'    # version data separately, so we don't have to reinstall on update.
-    # save space on rootfs. We should use /home/.system, BUT that has drwx------ root:root permissions ;)
-  - 'finaldatadir;/home/.local/share/%{name}'
 PkgBR:
   - fdupes
     # see   https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html

@@ -7,7 +7,7 @@ Name:       endless-sky
 
 # >> macros
 # << macros
-%define dataversion %{version}
+%define dataversion 0.10.2
 %define finaldatadir /home/.local/share/%{name}
 
 Summary:    Space exploration, trading, and combat game
