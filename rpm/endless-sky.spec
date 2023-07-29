@@ -22,6 +22,7 @@ Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-cmake-no-glew.patch
 Patch1:     %{name}-install-destination.patch
 Patch2:     %{name}-cmake319.patch
+Requires:   %{name}-gamedata-meta  = %{dataversion}
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
@@ -70,14 +71,14 @@ Url:
 Summary:    Gamedata Meta package for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
-Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
-Requires:   %{name}-data-sounds  = %{dataversion}
-Requires:   %{name}-data-images1 = %{dataversion}
-Requires:   %{name}-data-images2 = %{dataversion}
-Requires:   %{name}-data-images3 = %{dataversion}
-Requires:   %{name}-data-images4 = %{dataversion}
+Requires:   %{name}-gamedata-meta-sounds  = %{dataversion}
+Requires:   %{name}-gamedata-meta-images1 = %{dataversion}
+Requires:   %{name}-gamedata-meta-images2 = %{dataversion}
+Requires:   %{name}-gamedata-meta-images3 = %{dataversion}
+Requires:   %{name}-gamedata-meta-images4 = %{dataversion}
+Provides:   %{name}-gamedata-meta  = %{dataversion}
 
 %description data
 %{summary}.
@@ -86,9 +87,9 @@ Requires:   %{name}-data-images4 = %{dataversion}
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
-Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
+Provides:   %{name}-gamedata-meta-images1  = %{dataversion}
 
 %description data-images1
 %{summary}.
@@ -97,9 +98,9 @@ Requires:   %{name} = %{version}-%{release}
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
-Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
+Provides:   %{name}-gamedata-meta-images2  = %{dataversion}
 
 %description data-images2
 %{summary}.
@@ -108,9 +109,9 @@ Requires:   %{name} = %{version}-%{release}
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
-Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
+Provides:   %{name}-gamedata-meta-images3  = %{dataversion}
 
 %description data-images3
 %{summary}.
@@ -119,9 +120,9 @@ Requires:   %{name} = %{version}-%{release}
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
-Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
+Provides:   %{name}-gamedata-meta-images4  = %{dataversion}
 
 %description data-images4
 %{summary}.
@@ -130,9 +131,9 @@ Requires:   %{name} = %{version}-%{release}
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
-Version:    %{dataversion}
 BuildArch:  noarch
 Requires:   %{name} = %{version}-%{release}
+Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 
 %description data-sounds
 %{summary}.

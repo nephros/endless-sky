@@ -106,19 +106,24 @@ Files:
   - '%exclude %{_datadir}/man/man6/endless-sky.6.gz'
   - '%exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml'
 
+Requires:
+  - '%{name}-gamedata-meta  = %{dataversion}'
+
 SubPackages:
     - Name: data
-      Version: '%{dataversion}'
       Summary: Gamedata Meta package for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      # as OBS mangles the Version of subpackages also, lets create a meta package:
+      Provides:
+        - '%{name}-gamedata-meta  = %{dataversion}'
       Requires:
-        - '%{name}-data-sounds  = %{dataversion}'
-        - '%{name}-data-images1 = %{dataversion}'
-        - '%{name}-data-images2 = %{dataversion}'
-        - '%{name}-data-images3 = %{dataversion}'
-        - '%{name}-data-images4 = %{dataversion}'
+        - '%{name}-gamedata-meta-sounds  = %{dataversion}'
+        - '%{name}-gamedata-meta-images1 = %{dataversion}'
+        - '%{name}-gamedata-meta-images2 = %{dataversion}'
+        - '%{name}-gamedata-meta-images3 = %{dataversion}'
+        - '%{name}-gamedata-meta-images4 = %{dataversion}'
       Files:
         - '%license copyright'
         - '%{_datadir}/%{name}/resources'
@@ -127,44 +132,48 @@ SubPackages:
         - '%{finaldatadir}/keys.txt'
         - '%dir %{finaldatadir}/images'
     - Name: data-images1
-      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      Provides:
+        - '%{name}-gamedata-meta-images1  = %{dataversion}'
       Files:
         - '%{finaldatadir}/images/_menu'
         - '%{finaldatadir}/images/asteroid'
         - '%{finaldatadir}/images/effect'
         - '%{finaldatadir}/images/font'
     - Name: data-images2
-      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      Provides:
+        - '%{name}-gamedata-meta-images2  = %{dataversion}'
       Files:
         - '%{finaldatadir}/images/hardpoint'
         - '%{finaldatadir}/images/icon'
         - '%{finaldatadir}/images/label'
         - '%{finaldatadir}/images/land'
     - Name: data-images3
-      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      Provides:
+        - '%{name}-gamedata-meta-images3  = %{dataversion}'
       Files:
         - '%{finaldatadir}/images/outfit'
         - '%{finaldatadir}/images/planet'
         - '%{finaldatadir}/images/portrait'
         - '%{finaldatadir}/images/projectile'
     - Name: data-images4
-      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      Provides:
+        - '%{name}-gamedata-meta-images4  = %{dataversion}'
       Files:
         - '%{finaldatadir}/images/scene'
         - '%{finaldatadir}/images/ship'
@@ -172,10 +181,11 @@ SubPackages:
         - '%{finaldatadir}/images/thumbnail'
         - '%{finaldatadir}/images/ui'
     - Name: data-sounds
-      Version: '%{dataversion}'
       Summary: Gamedata for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      Provides:
+        - '%{name}-gamedata-meta-sounds  = %{dataversion}'
       Files:
         - '%{finaldatadir}/sounds'
