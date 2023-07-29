@@ -9,6 +9,7 @@ SCM: https://github.com/nephros/endless-sky
 Sources:
     - '%{name}-%{version}.tar.gz'
 Patches:
+   - '%{name}-cmake-no-glew.patch'
    - '%{name}-install-destination.patch'
    # see https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
    - '%{name}-cmake319.patch'
@@ -63,7 +64,6 @@ PkgBR:
   - libjpeg-turbo-devel
   - OpenAL-devel
 PkgConfigBR:
-  - glew
   - libglvnd
   - uuid
   - mad
@@ -71,6 +71,8 @@ PkgConfigBR:
 Configure: cmake
 ConfigOptions:
   - '-G Ninja'
+  - '-DSAILFISHOS=ON'
+  - '-DCMAKE_RULE_MESSAGES=ON'
   - '-DCMAKE_BUILD_TYPE=Release'
   - '-DCMAKE_COLOR_DIAGNOSTICS=OFF'
   - '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
@@ -88,9 +90,6 @@ ConfigOptions:
   # Needed for our custom install path from libglvnd:
   - '-DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;"'
   - '-DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"'
-  # Fix glew to not use GLU:
-  - '-DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU"'
-  - '-DCMAKE_CXX_CFLAGS="${CMAKE_CXX_CFLAGS} -DGLEW_NO_GLU"'
 Builder: none
 NoIconCache: true
 Files:

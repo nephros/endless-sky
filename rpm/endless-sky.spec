@@ -19,10 +19,10 @@ URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
-Patch0:     %{name}-install-destination.patch
-Patch1:     %{name}-cmake319.patch
+Patch0:     %{name}-cmake-no-glew.patch
+Patch1:     %{name}-install-destination.patch
+Patch2:     %{name}-cmake319.patch
 Requires:   %{name}-gamedata-meta  = %{dataversion}
-BuildRequires:  pkgconfig(glew)
 BuildRequires:  pkgconfig(libglvnd)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
@@ -141,23 +141,23 @@ Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
-# %{name}-install-destination.patch
+# %{name}-cmake-no-glew.patch
 %patch0 -p1
-# %{name}-cmake319.patch
+# %{name}-install-destination.patch
 %patch1 -p1
+# %{name}-cmake319.patch
+%patch2 -p1
 # >> setup
 # << setup
 
 %build
 # >> build pre
-# Fix glew to not use GLU:
-export GLEW_NO_GLU=-DGLEW_NO_GLU
-export CFLAGS="$CFLAGS -DGLEW_NO_GLU"
-export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
 # << build pre
 
 %cmake .  \
     -G Ninja \
+    -DSAILFISHOS=ON \
+    -DCMAKE_RULE_MESSAGES=ON \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_COLOR_DIAGNOSTICS=OFF \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
@@ -171,9 +171,7 @@ export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
     -DES_CREATE_BUNDLE=OFF \
     -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON \
     -DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;" \
-    -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd" \
-    -DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU" \
-    -DCMAKE_CXX_CFLAGS="${CMAKE_CXX_CFLAGS} -DGLEW_NO_GLU"
+    -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"
 
 
 # >> build post
