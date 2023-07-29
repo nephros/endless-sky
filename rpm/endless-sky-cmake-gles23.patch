@@ -1,19 +1,25 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 65ecafd..6abcd61 100644
+index 65ecafd..2c50975 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -144,8 +144,16 @@ endif()
+@@ -144,8 +144,22 @@ endif()
  
  # Link with OpenGL or OpenGL ES.
  if(ES_GLES)
 -	find_package(OpenGL REQUIRED OpenGL EGL)
 -	target_link_libraries(ExternalLibraries INTERFACE OpenGL::OpenGL OpenGL::EGL)
-+	if (SAILFISHOS)
-+		set(OpenGL_GL_PREFERENCE "LEGACY")
-+		# Jolla packages v2 headers, but no pkconfig file for them.
-+		# so lets look got v2 but use v3
-+		find_package(OpenGL REQUIRED GLES2 EGL)
-+		target_link_libraries(ExternalLibraries INTERFACE OpenGL::GLES3 OpenGL::EGL)
++	if(SAILFISHOS)
++		# our cmake doesn't support finding GLES stuff, ets do it manually:
++		# GLES
++		find_library(GLES_LIB NAMES GLESv2 PATHS /lib /usr/lib /usr/local/lib)
++		find_path(GLES_INCLUDE GLES3/gl3.h /usr/local/include /usr/include)
++		target_link_libraries(ExternalLibraries INTERFACE "${GLES_LIB}")
++		target_include_directories(ExternalLibraries INTERFACE "${GLES_INCLUDE}")
++		# EGL
++		find_library(EGL_LIB NAMES EGLv2 PATHS /lib /usr/lib /usr/local/lib)
++		find_path(EGL_INCLUDE EGL3/gl3.h /usr/local/include /usr/include)
++		target_link_libraries(ExternalLibraries INTERFACE "${EGL_LIB}")
++		target_include_directories(ExternalLibraries INTERFACE "${EGL_INCLUDE}")
 +	else()
 +		find_package(OpenGL REQUIRED OpenGL EGL)
 +		target_link_libraries(ExternalLibraries INTERFACE OpenGL::OpenGL OpenGL::EGL)
