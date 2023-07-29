@@ -10,6 +10,7 @@ Sources:
     - '%{name}-%{version}.tar.gz'
 Patches:
    - '%{name}-cmake-no-glew.patch'
+   - '%{name}-cmake-gles23.patch'
    - '%{name}-install-destination.patch'
    # see https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
    - '%{name}-cmake319.patch'

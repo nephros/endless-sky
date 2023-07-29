@@ -1,0 +1,23 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 65ecafd..6abcd61 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -144,8 +144,16 @@ endif()
+ 
+ # Link with OpenGL or OpenGL ES.
+ if(ES_GLES)
+-	find_package(OpenGL REQUIRED OpenGL EGL)
+-	target_link_libraries(ExternalLibraries INTERFACE OpenGL::OpenGL OpenGL::EGL)
++	if (SAILFISHOS)
++		set(OpenGL_GL_PREFERENCE "LEGACY")
++		# Jolla packages v2 headers, but no pkconfig file for them.
++		# so lets look got v2 but use v3
++		find_package(OpenGL REQUIRED GLES2 EGL)
++		target_link_libraries(ExternalLibraries INTERFACE OpenGL::GLES3 OpenGL::EGL)
++	else()
++		find_package(OpenGL REQUIRED OpenGL EGL)
++		target_link_libraries(ExternalLibraries INTERFACE OpenGL::OpenGL OpenGL::EGL)
++	endif()
+ 	target_compile_definitions(EndlessSkyLib PUBLIC ES_GLES)
+ else()
+ 	# The Steam runtime can't rely on GLVND being available, so link against the legacy interface.
