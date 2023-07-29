@@ -205,6 +205,7 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
+%license license.txt
 %license copyright
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
@@ -219,6 +220,7 @@ desktop-file-install --delete-original       \
 %files data
 %defattr(-,root,root,-)
 %license copyright
+%{_datadir}/%{name}/resources
 %{finaldatadir}/data
 %{finaldatadir}/credits.txt
 %{finaldatadir}/keys.txt
