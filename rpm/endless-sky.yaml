@@ -23,6 +23,9 @@ Description: |
     Blow up pirates. Take sides in a civil war. Or leave human space behind and
     hope to find friendly aliens whose culture is more civilized than your own.
 
+    NOTE: To run this, you need to either install the -data meta-package, or
+          provide the game data youself. It is expected to be in /home/.system/usr/share/endless-sky/data
+
     %if "%{?vendor}" == "chum"
     PackageName: Endless Sky
     Type: desktop-application
@@ -46,8 +49,6 @@ RpmLintIgnore:
 Macros:
   - 'dataversion;%{version}'    # version data separately, so we don't have to reinstall on update.
   - 'finaldatadir;/home/.local/%{_datadir}' # save space on rootfs
-Requires:
-  - '%{name}-data = %{dataversion}'
 PkgBR:
   - fdupes
     # see   https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
@@ -99,7 +100,7 @@ Files:
   - '%{_datadir}/applications/%{name}.desktop'
   - '%{_datadir}/icons/hicolor/*/apps/endless-sky.png'
   - '%dir %{finaldatadir}/%{name}'
-  # installed but useless:
+  # installed but useless on SFOS:
   - '%exclude %{_datadir}/doc/endless-sky/*'
   - '%exclude %{_datadir}/man/man6/endless-sky.6.gz'
   - '%exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml'
@@ -107,7 +108,7 @@ Files:
 SubPackages:
     - Name: data
       Version: '%{dataversion}'
-      Summary: Gamedata for %{name}
+      Summary: Gamedata Meta package for %{name}
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch

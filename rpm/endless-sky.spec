@@ -21,7 +21,6 @@ Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-install-destination.patch
 Patch1:     %{name}-cmake319.patch
-Requires:   %{name}-data = %{dataversion}
 BuildRequires:  pkgconfig(glew)
 BuildRequires:  pkgconfig(libglvnd)
 BuildRequires:  pkgconfig(uuid)
@@ -48,6 +47,9 @@ the weapons and engines on your current one.
 Blow up pirates. Take sides in a civil war. Or leave human space behind and
 hope to find friendly aliens whose culture is more civilized than your own.
 
+NOTE: To run this, you need to either install the -data meta-package, or
+      provide the game data youself. It is expected to be in /home/.system/usr/share/endless-sky/data
+
 %if "%{?vendor}" == "chum"
 PackageName: Endless Sky
 Type: desktop-application
@@ -65,7 +67,7 @@ Url:
 
 
 %package data
-Summary:    Gamedata for %{name}
+Summary:    Gamedata Meta package for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
 Version:    %{dataversion}
