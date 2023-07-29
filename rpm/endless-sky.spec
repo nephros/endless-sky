@@ -196,6 +196,9 @@ sed -i -e '/^Version.*$/d;/^SingleMainWindow/d' %{buildroot}%{_datadir}/applicat
 mv %{buildroot}%{_datadir}/%{name}/images %{buildroot}%{finaldatadir}/%{name}/
 mv %{buildroot}%{_datadir}/%{name}/data %{buildroot}%{finaldatadir}/%{name}/
 mv %{buildroot}%{_datadir}/%{name}/sounds %{buildroot}%{finaldatadir}/%{name}/
+mv %{buildroot}%{_datadir}/%{name}/credits.txt %{buildroot}%{finaldatadir}/%{name}/
+mv %{buildroot}%{_datadir}/%{name}/keys.txt %{buildroot}%{finaldatadir}/%{name}/
+# << install post
 # << install post
 
 desktop-file-install --delete-original       \

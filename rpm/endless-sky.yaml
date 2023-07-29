@@ -95,8 +95,6 @@ NoIconCache: true
 Files:
   - '%license copyright'
   - '%{_bindir}/%{name}'
-  - '%{_datadir}/%{name}/credits.txt'
-  - '%{_datadir}/%{name}/keys.txt'
   - '%{_datadir}/applications/%{name}.desktop'
   - '%{_datadir}/icons/hicolor/*/apps/endless-sky.png'
   - '%dir %{finaldatadir}/%{name}'
@@ -121,6 +119,8 @@ SubPackages:
       Files:
         - '%license copyright'
         - '%{finaldatadir}/%{name}/data'
+        - '%{finaldatadir}/%{name}/credits.txt'
+        - '%{finaldatadir}/%{name}/keys.txt'
         - '%dir %{finaldatadir}/%{name}/images'
     - Name: data-images1
       Version: '%{dataversion}'
