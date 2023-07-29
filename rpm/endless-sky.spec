@@ -199,7 +199,6 @@ mv %{buildroot}%{_datadir}/%{name}/sounds %{buildroot}%{finaldatadir}/%{name}/
 mv %{buildroot}%{_datadir}/%{name}/credits.txt %{buildroot}%{finaldatadir}/%{name}/
 mv %{buildroot}%{_datadir}/%{name}/keys.txt %{buildroot}%{finaldatadir}/%{name}/
 # << install post
-# << install post
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
