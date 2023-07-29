@@ -151,12 +151,6 @@ Requires:   %{name} = %{version}-%{release}
 export GLEW_NO_GLU=-DGLEW_NO_GLU
 export CFLAGS="$CFLAGS -DGLEW_NO_GLU"
 export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
-rpm -qv cmake
-cmake --version
-command -v cmake
-rpm -ql cmake | grep bin
-rpm -qf /usr/bin/cmake
-rpm -qV --noscripts cmake -v
 # << build pre
 
 %cmake .  \
