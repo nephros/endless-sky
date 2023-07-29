@@ -56,26 +56,25 @@ RpmLintIgnore:
   - 'no-changelogname-tag'
   - 'invalid-url'
 PkgBR:
-  - fdupes
-    # see   https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
+  # see   https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
+  # actually cmake >= 3.21.0, cmake < 3.26.0
   - cmake >= 3.19.0, cmake < 3.26.0
-  # actually:
-  # cmake >= 3.21.0, cmake < 3.26.0
   - gcc-c++
   - git-core
   - ninja
-  - SDL2-devel
-  - libjpeg-turbo-devel
-  - OpenAL-devel
+  - fdupes
 PkgConfigBR:
   # We have a choice for libglvnd and (mesa-)libGLESv2 to support OpenGL(ES) 3.0:
   # libglvnd
   - glesv2 # includes GLESv3
   - egl
   - wayland-egl
-  - uuid
-  - mad
+  - libjpeg
   - libpng
+  - mad
+  - openal
+  - sdl2
+  - uuid
 Configure: cmake
 ConfigOptions:
   - '-G Ninja'

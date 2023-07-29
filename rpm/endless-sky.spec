@@ -27,17 +27,17 @@ Requires:   %{name}-gamedata-meta  = %{dataversion}
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(wayland-egl)
-BuildRequires:  pkgconfig(uuid)
-BuildRequires:  pkgconfig(mad)
+BuildRequires:  pkgconfig(libjpeg)
 BuildRequires:  pkgconfig(libpng)
-BuildRequires:  fdupes
+BuildRequires:  pkgconfig(mad)
+BuildRequires:  pkgconfig(openal)
+BuildRequires:  pkgconfig(sdl2)
+BuildRequires:  pkgconfig(uuid)
 BuildRequires:  cmake >= 3.19.0, cmake < 3.26.0
 BuildRequires:  gcc-c++
 BuildRequires:  git-core
 BuildRequires:  ninja
-BuildRequires:  SDL2-devel
-BuildRequires:  libjpeg-turbo-devel
-BuildRequires:  OpenAL-devel
+BuildRequires:  fdupes
 BuildRequires:  desktop-file-utils
 
 %description
