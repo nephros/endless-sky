@@ -56,6 +56,7 @@ PkgBR:
   # cmake >= 3.21.0, cmake < 3.26.0
   - gcc-c++
   - git-core
+  - make
   - ninja
   - SDL2-devel
   - libjpeg-turbo-devel
@@ -86,7 +87,7 @@ ConfigOptions:
   # Fix glew to not use GLU:
   - '-DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU"'
   - '-DCMAKE_CXX_CFLAGS="${CMAKE_CXX_CFLAGS} -DGLEW_NO_GLU"'
-Builder: make
+Builder: none
 NoIconCache: true
 Files:
   - '%license copyright'

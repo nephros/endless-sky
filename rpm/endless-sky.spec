@@ -31,6 +31,7 @@ BuildRequires:  fdupes
 BuildRequires:  cmake >= 3.19.0, cmake < 3.26.0
 BuildRequires:  gcc-c++
 BuildRequires:  git-core
+BuildRequires:  make
 BuildRequires:  ninja
 BuildRequires:  SDL2-devel
 BuildRequires:  libjpeg-turbo-devel
@@ -169,9 +170,10 @@ export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
     -DCMAKE_C_CFLAGS="${CMAKE_C_CFLAGS} -DGLEW_NO_GLU" \
     -DCMAKE_CXX_CFLAGS="${CMAKE_CXX_CFLAGS} -DGLEW_NO_GLU"
 
-make %{?_smp_mflags}
 
 # >> build post
+%make_build
+#%%{__make} %%{_make_output_sync} %%{?_smp_mflags} %%{_make_verbose}
 # << build post
 
 %install
@@ -179,8 +181,8 @@ rm -rf %{buildroot}
 # >> install pre
 %__install -d -m 0755 "%{buildroot}%{_datadir}/%{name}"
 
-# << install pre
 %make_install
+# << install pre
 
 # >> install post
 # Fix invlaid entries:
