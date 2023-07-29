@@ -29,7 +29,7 @@ index 65ecafd..7081733 100644
  	install(FILES changelog DESTINATION share/doc/endless-sky)
  	install(FILES license.txt DESTINATION share/doc/endless-sky)
 diff --git a/source/Files.cpp b/source/Files.cpp
-index 1f72117..d6a82da 100644
+index 1f72117..7756e45 100644
 --- a/source/Files.cpp
 +++ b/source/Files.cpp
 @@ -118,11 +118,14 @@ void Files::Init(const char * const *argv)
@@ -37,7 +37,7 @@ index 1f72117..d6a82da 100644
  	static const string LOCAL_PATH = "/usr/local/";
  	static const string STANDARD_PATH = "/usr/";
 -	static const string RESOURCE_PATH = "share/games/endless-sky/";
-+	static const string RESOURCE_PATH = "/home/.system/usr/share/endless-sky/";
++	static const string RESOURCE_PATH = "/home/.local/share/endless-sky/";
 +	/*
  	if(!resources.compare(0, LOCAL_PATH.length(), LOCAL_PATH))
  		resources = LOCAL_PATH + RESOURCE_PATH;

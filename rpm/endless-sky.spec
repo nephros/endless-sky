@@ -8,7 +8,7 @@ Name:       endless-sky
 # >> macros
 # << macros
 %define dataversion %{version}
-%define finaldatadir /home/.local/%{_datadir}
+%define finaldatadir /home/.local/share/%{name}
 
 Summary:    Space exploration, trading, and combat game
 Version:    0.10.2
@@ -192,12 +192,13 @@ rm -rf %{buildroot}
 sed -i -e '/^Version.*$/d;/^SingleMainWindow/d' %{buildroot}%{_datadir}/applications/*.desktop
 %fdupes %{buildroot}%{_datadir}/%{name}/images
 # move resource data to /home/.system
-%__install -d -m 0755 "%{buildroot}%{finaldatadir}/%{name}"
-mv %{buildroot}%{_datadir}/%{name}/images %{buildroot}%{finaldatadir}/%{name}/
-mv %{buildroot}%{_datadir}/%{name}/data %{buildroot}%{finaldatadir}/%{name}/
-mv %{buildroot}%{_datadir}/%{name}/sounds %{buildroot}%{finaldatadir}/%{name}/
-mv %{buildroot}%{_datadir}/%{name}/credits.txt %{buildroot}%{finaldatadir}/%{name}/
-mv %{buildroot}%{_datadir}/%{name}/keys.txt %{buildroot}%{finaldatadir}/%{name}/
+%__install -d -m 0755 "%{buildroot}%{finaldatadir}"
+mv %{buildroot}%{_datadir}/%{name}/images %{buildroot}%{finaldatadir}/
+mv %{buildroot}%{_datadir}/%{name}/data %{buildroot}%{finaldatadir}/
+mv %{buildroot}%{_datadir}/%{name}/sounds %{buildroot}%{finaldatadir}/
+mv %{buildroot}%{_datadir}/%{name}/credits.txt %{buildroot}%{finaldatadir}/
+mv %{buildroot}%{_datadir}/%{name}/keys.txt %{buildroot}%{finaldatadir}/
+ln -s %{finaldatadir} %{buildroot}%{_datadir}/%{name}/resources
 # << install post
 
 desktop-file-install --delete-original       \
@@ -208,11 +209,9 @@ desktop-file-install --delete-original       \
 %defattr(-,root,root,-)
 %license copyright
 %{_bindir}/%{name}
-%{_datadir}/%{name}/credits.txt
-%{_datadir}/%{name}/keys.txt
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/endless-sky.png
-%dir %{finaldatadir}/%{name}
+%dir %{finaldatadir}
 %exclude %{_datadir}/doc/endless-sky/*
 %exclude %{_datadir}/man/man6/endless-sky.6.gz
 %exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml
@@ -222,50 +221,52 @@ desktop-file-install --delete-original       \
 %files data
 %defattr(-,root,root,-)
 %license copyright
-%{finaldatadir}/%{name}/data
-%dir %{finaldatadir}/%{name}/images
+%{finaldatadir}/data
+%{finaldatadir}/credits.txt
+%{finaldatadir}/keys.txt
+%dir %{finaldatadir}/images
 # >> files data
 # << files data
 
 %files data-images1
 %defattr(-,root,root,-)
-%{finaldatadir}/%{name}/images/_menu
-%{finaldatadir}/%{name}/images/asteroid
-%{finaldatadir}/%{name}/images/effect
-%{finaldatadir}/%{name}/images/font
+%{finaldatadir}/images/_menu
+%{finaldatadir}/images/asteroid
+%{finaldatadir}/images/effect
+%{finaldatadir}/images/font
 # >> files data-images1
 # << files data-images1
 
 %files data-images2
 %defattr(-,root,root,-)
-%{finaldatadir}/%{name}/images/hardpoint
-%{finaldatadir}/%{name}/images/icon
-%{finaldatadir}/%{name}/images/label
-%{finaldatadir}/%{name}/images/land
+%{finaldatadir}/images/hardpoint
+%{finaldatadir}/images/icon
+%{finaldatadir}/images/label
+%{finaldatadir}/images/land
 # >> files data-images2
 # << files data-images2
 
 %files data-images3
 %defattr(-,root,root,-)
-%{finaldatadir}/%{name}/images/outfit
-%{finaldatadir}/%{name}/images/planet
-%{finaldatadir}/%{name}/images/portrait
-%{finaldatadir}/%{name}/images/projectile
+%{finaldatadir}/images/outfit
+%{finaldatadir}/images/planet
+%{finaldatadir}/images/portrait
+%{finaldatadir}/images/projectile
 # >> files data-images3
 # << files data-images3
 
 %files data-images4
 %defattr(-,root,root,-)
-%{finaldatadir}/%{name}/images/scene
-%{finaldatadir}/%{name}/images/ship
-%{finaldatadir}/%{name}/images/star
-%{finaldatadir}/%{name}/images/thumbnail
-%{finaldatadir}/%{name}/images/ui
+%{finaldatadir}/images/scene
+%{finaldatadir}/images/ship
+%{finaldatadir}/images/star
+%{finaldatadir}/images/thumbnail
+%{finaldatadir}/images/ui
 # >> files data-images4
 # << files data-images4
 
 %files data-sounds
 %defattr(-,root,root,-)
-%{finaldatadir}/%{name}/sounds
+%{finaldatadir}/sounds
 # >> files data-sounds
 # << files data-sounds

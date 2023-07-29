@@ -48,7 +48,8 @@ RpmLintIgnore:
   - 'invalid-url'
 Macros:
   - 'dataversion;%{version}'    # version data separately, so we don't have to reinstall on update.
-  - 'finaldatadir;/home/.local/%{_datadir}' # save space on rootfs
+    # save space on rootfs. We should use /home/.system, BUT that has drwx------ root:root permissions ;)
+  - 'finaldatadir;/home/.local/share/%{name}'
 PkgBR:
   - fdupes
     # see   https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
@@ -97,7 +98,7 @@ Files:
   - '%{_bindir}/%{name}'
   - '%{_datadir}/applications/%{name}.desktop'
   - '%{_datadir}/icons/hicolor/*/apps/endless-sky.png'
-  - '%dir %{finaldatadir}/%{name}'
+  - '%dir %{finaldatadir}'
   # installed but useless on SFOS:
   - '%exclude %{_datadir}/doc/endless-sky/*'
   - '%exclude %{_datadir}/man/man6/endless-sky.6.gz'
@@ -118,10 +119,10 @@ SubPackages:
         - '%{name}-data-images4 = %{dataversion}'
       Files:
         - '%license copyright'
-        - '%{finaldatadir}/%{name}/data'
-        - '%{finaldatadir}/%{name}/credits.txt'
-        - '%{finaldatadir}/%{name}/keys.txt'
-        - '%dir %{finaldatadir}/%{name}/images'
+        - '%{finaldatadir}/data'
+        - '%{finaldatadir}/credits.txt'
+        - '%{finaldatadir}/keys.txt'
+        - '%dir %{finaldatadir}/images'
     - Name: data-images1
       Version: '%{dataversion}'
       Summary: Gamedata for %{name}
@@ -129,10 +130,10 @@ SubPackages:
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%{finaldatadir}/%{name}/images/_menu'
-        - '%{finaldatadir}/%{name}/images/asteroid'
-        - '%{finaldatadir}/%{name}/images/effect'
-        - '%{finaldatadir}/%{name}/images/font'
+        - '%{finaldatadir}/images/_menu'
+        - '%{finaldatadir}/images/asteroid'
+        - '%{finaldatadir}/images/effect'
+        - '%{finaldatadir}/images/font'
     - Name: data-images2
       Version: '%{dataversion}'
       Summary: Gamedata for %{name}
@@ -140,10 +141,10 @@ SubPackages:
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%{finaldatadir}/%{name}/images/hardpoint'
-        - '%{finaldatadir}/%{name}/images/icon'
-        - '%{finaldatadir}/%{name}/images/label'
-        - '%{finaldatadir}/%{name}/images/land'
+        - '%{finaldatadir}/images/hardpoint'
+        - '%{finaldatadir}/images/icon'
+        - '%{finaldatadir}/images/label'
+        - '%{finaldatadir}/images/land'
     - Name: data-images3
       Version: '%{dataversion}'
       Summary: Gamedata for %{name}
@@ -151,10 +152,10 @@ SubPackages:
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%{finaldatadir}/%{name}/images/outfit'
-        - '%{finaldatadir}/%{name}/images/planet'
-        - '%{finaldatadir}/%{name}/images/portrait'
-        - '%{finaldatadir}/%{name}/images/projectile'
+        - '%{finaldatadir}/images/outfit'
+        - '%{finaldatadir}/images/planet'
+        - '%{finaldatadir}/images/portrait'
+        - '%{finaldatadir}/images/projectile'
     - Name: data-images4
       Version: '%{dataversion}'
       Summary: Gamedata for %{name}
@@ -162,11 +163,11 @@ SubPackages:
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%{finaldatadir}/%{name}/images/scene'
-        - '%{finaldatadir}/%{name}/images/ship'
-        - '%{finaldatadir}/%{name}/images/star'
-        - '%{finaldatadir}/%{name}/images/thumbnail'
-        - '%{finaldatadir}/%{name}/images/ui'
+        - '%{finaldatadir}/images/scene'
+        - '%{finaldatadir}/images/ship'
+        - '%{finaldatadir}/images/star'
+        - '%{finaldatadir}/images/thumbnail'
+        - '%{finaldatadir}/images/ui'
     - Name: data-sounds
       Version: '%{dataversion}'
       Summary: Gamedata for %{name}
@@ -174,4 +175,4 @@ SubPackages:
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       Files:
-        - '%{finaldatadir}/%{name}/sounds'
+        - '%{finaldatadir}/sounds'
