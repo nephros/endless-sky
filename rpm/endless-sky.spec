@@ -20,8 +20,9 @@ Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-cmake-no-glew.patch
-Patch1:     %{name}-install-destination.patch
-Patch2:     %{name}-cmake319.patch
+Patch1:     %{name}-cmake-gles23.patch
+Patch2:     %{name}-install-destination.patch
+Patch3:     %{name}-cmake319.patch
 Requires:   %{name}-gamedata-meta  = %{dataversion}
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(uuid)
@@ -143,10 +144,12 @@ Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 
 # %{name}-cmake-no-glew.patch
 %patch0 -p1
-# %{name}-install-destination.patch
+# %{name}-cmake-gles23.patch
 %patch1 -p1
-# %{name}-cmake319.patch
+# %{name}-install-destination.patch
 %patch2 -p1
+# %{name}-cmake319.patch
+%patch3 -p1
 # >> setup
 # << setup
 
