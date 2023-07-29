@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 65ecafdc..bc2b0587 100644
+index 65ecafd..57c7b03 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -10,6 +10,11 @@ cmake_dependent_option(ES_USE_OFFSCREEN
@@ -25,15 +25,7 @@ index 65ecafdc..bc2b0587 100644
  endif()
  
  # Only very new versions of OpenAL provide a config package, so try to find it manually.
-@@ -147,6 +154,7 @@ if(ES_GLES)
- 	find_package(OpenGL REQUIRED OpenGL EGL)
- 	target_link_libraries(ExternalLibraries INTERFACE OpenGL::OpenGL OpenGL::EGL)
- 	target_compile_definitions(EndlessSkyLib PUBLIC ES_GLES)
-+	target_compile_definitions(EndlessSky PUBLIC ES_GLES)
- else()
- 	# The Steam runtime can't rely on GLVND being available, so link against the legacy interface.
- 	if(ES_STEAM)
-@@ -160,8 +168,10 @@ else()
+@@ -160,8 +167,10 @@ else()
  		# Apple deprecated OpenGL in MacOS 10.14, but we don't care.
  		target_compile_definitions(EndlessSkyLib PUBLIC GL_SILENCE_DEPRECATION)
  	else()
@@ -46,3 +38,11 @@ index 65ecafdc..bc2b0587 100644
  	endif()
  endif()
  
+@@ -221,6 +230,7 @@ elseif(WIN32)
+ else()
+ 	add_executable(EndlessSky source/main.cpp)
+ 	set_target_properties(EndlessSky PROPERTIES OUTPUT_NAME "endless-sky")
++	target_compile_definitions(EndlessSky PUBLIC ES_GLES)
+ endif()
+ 
+ # Link with the library dependencies.
