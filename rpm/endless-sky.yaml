@@ -9,11 +9,11 @@ SCM: https://github.com/nephros/endless-sky
 Sources:
     - '%{name}-%{version}.tar.gz'
 Patches:
+   # see https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
+   - '%{name}-cmake319.patch'
    - '%{name}-cmake-no-glew.patch'
    - '%{name}-cmake-gles23.patch'
    - '%{name}-install-destination.patch'
-   # see https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
-   - '%{name}-cmake319.patch'
 Description: |
     Endless Sky is a 2D space trading and combat game similar to the classic
     Escape Velocity series.

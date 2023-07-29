@@ -19,13 +19,14 @@ URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
-Patch0:     %{name}-cmake-no-glew.patch
-Patch1:     %{name}-cmake-gles23.patch
-Patch2:     %{name}-install-destination.patch
-Patch3:     %{name}-cmake319.patch
+Patch0:     %{name}-cmake319.patch
+Patch1:     %{name}-cmake-no-glew.patch
+Patch2:     %{name}-cmake-gles23.patch
+Patch3:     %{name}-install-destination.patch
 Requires:   %{name}-gamedata-meta  = %{dataversion}
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(egl)
+BuildRequires:  pkgconfig(wayland-egl)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
 BuildRequires:  pkgconfig(libpng)
@@ -143,13 +144,13 @@ Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
-# %{name}-cmake-no-glew.patch
-%patch0 -p1
-# %{name}-cmake-gles23.patch
-%patch1 -p1
-# %{name}-install-destination.patch
-%patch2 -p1
 # %{name}-cmake319.patch
+%patch0 -p1
+# %{name}-cmake-no-glew.patch
+%patch1 -p1
+# %{name}-cmake-gles23.patch
+%patch2 -p1
+# %{name}-install-destination.patch
 %patch3 -p1
 # >> setup
 # << setup
