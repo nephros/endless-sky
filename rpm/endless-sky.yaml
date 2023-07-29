@@ -64,7 +64,9 @@ PkgBR:
   - libjpeg-turbo-devel
   - OpenAL-devel
 PkgConfigBR:
-  - libglvnd
+  # We have a choice for libglvnd and (mesa-)libGLESv2 to support OpenGL(ES) 3.0:
+  # libglvnd
+  - glesv2 # includes GLESv3
   - uuid
   - mad
   - libpng
@@ -83,13 +85,13 @@ ConfigOptions:
   # OpenGL ES
   - '-DES_GLES=ON'
   # OpenGL: use glvnd options, https://cmake.org/cmake/help/latest/module/FindOpenGL.html
-  - '-DOpenGL_GL_PREFERENCE=GLVND'
+  # '-DOpenGL_GL_PREFERENCE=GLVND'
   - '-DES_USE_SYSTEM_LIBRARIES=ON'
   - '-DES_CREATE_BUNDLE=OFF'
   - '-DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON'
   # Needed for our custom install path from libglvnd:
-  - '-DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;"'
-  - '-DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"'
+  # '-DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;"'
+  # '-DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"'
 Builder: none
 NoIconCache: true
 Files:
