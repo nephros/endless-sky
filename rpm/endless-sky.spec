@@ -22,7 +22,7 @@ Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-cmake-no-glew.patch
 Patch1:     %{name}-install-destination.patch
 Patch2:     %{name}-cmake319.patch
-BuildRequires:  pkgconfig(libglvnd)
+BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
 BuildRequires:  pkgconfig(libpng)
@@ -165,12 +165,9 @@ Requires:   %{name} = %{version}-%{release}
     -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF \
     -DES_USE_VCPKG=OFF \
     -DES_GLES=ON \
-    -DOpenGL_GL_PREFERENCE=GLVND \
     -DES_USE_SYSTEM_LIBRARIES=ON \
     -DES_CREATE_BUNDLE=OFF \
-    -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON \
-    -DCMAKE_PREFIX_PATH="%{_libdir}/glvnd;%{_libdir}/pkgconfig/glvnd;" \
-    -DCMAKE_INCLUDE_PATH="%{_includedir}/glvnd"
+    -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON
 
 
 # >> build post
