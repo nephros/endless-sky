@@ -10,6 +10,8 @@ Sources:
     - '%{name}-%{version}.tar.gz'
 Patches:
    - '%{name}-install-destination.patch'
+   # see https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
+   - '%{name}-cmake319.patch'
 Description: |
     Endless Sky is a 2D space trading and combat game similar to the classic
     Escape Velocity series.
@@ -48,7 +50,8 @@ Requires:
   - '%{name}-data = %{dataversion}'
 PkgBR:
   - fdupes
-  - cmake >= 3.21.0, cmake < 3.26.0
+    # see   https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
+  # cmake >= 3.21.0, cmake < 3.26.0
   - gcc-c++
   - git-core
   - ninja

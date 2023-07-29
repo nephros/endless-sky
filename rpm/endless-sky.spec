@@ -20,6 +20,7 @@ Source0:    %{name}-%{version}.tar.gz
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-install-destination.patch
+Patch1:     %{name}-cmake319.patch
 Requires:   %{name}-data = %{dataversion}
 BuildRequires:  pkgconfig(glew)
 BuildRequires:  pkgconfig(libglvnd)
@@ -27,7 +28,6 @@ BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  fdupes
-BuildRequires:  cmake >= 3.21.0, cmake < 3.26.0
 BuildRequires:  gcc-c++
 BuildRequires:  git-core
 BuildRequires:  ninja
@@ -139,6 +139,8 @@ Requires:   %{name} = %{version}-%{release}
 
 # %{name}-install-destination.patch
 %patch0 -p1
+# %{name}-cmake319.patch
+%patch1 -p1
 # >> setup
 # << setup
 
