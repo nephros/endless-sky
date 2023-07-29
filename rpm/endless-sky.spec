@@ -28,6 +28,7 @@ BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  fdupes
+BuildRequires:  cmake >= 3.19.0, cmake < 3.26.0
 BuildRequires:  gcc-c++
 BuildRequires:  git-core
 BuildRequires:  ninja

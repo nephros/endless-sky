@@ -51,6 +51,8 @@ Requires:
 PkgBR:
   - fdupes
     # see   https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
+  - cmake >= 3.19.0, cmake < 3.26.0
+  # actually:
   # cmake >= 3.21.0, cmake < 3.26.0
   - gcc-c++
   - git-core
