@@ -94,6 +94,7 @@ ConfigOptions:
 Builder: none
 NoIconCache: true
 Files:
+  - '%license license.txt'
   - '%license copyright'
   - '%{_bindir}/%{name}'
   - '%{_datadir}/applications/%{name}.desktop'
@@ -119,6 +120,7 @@ SubPackages:
         - '%{name}-data-images4 = %{dataversion}'
       Files:
         - '%license copyright'
+        - '%{_datadir}/%{name}/resources'
         - '%{finaldatadir}/data'
         - '%{finaldatadir}/credits.txt'
         - '%{finaldatadir}/keys.txt'
