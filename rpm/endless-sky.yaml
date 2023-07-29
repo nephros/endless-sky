@@ -56,7 +56,6 @@ PkgBR:
   # cmake >= 3.21.0, cmake < 3.26.0
   - gcc-c++
   - git-core
-  - make
   - ninja
   - SDL2-devel
   - libjpeg-turbo-devel

@@ -31,7 +31,6 @@ BuildRequires:  fdupes
 BuildRequires:  cmake >= 3.19.0, cmake < 3.26.0
 BuildRequires:  gcc-c++
 BuildRequires:  git-core
-BuildRequires:  make
 BuildRequires:  ninja
 BuildRequires:  SDL2-devel
 BuildRequires:  libjpeg-turbo-devel
@@ -175,8 +174,6 @@ export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
 
 
 # >> build post
-#%%make_build
-#%%{__make} %%{_make_output_sync} %%{?_smp_mflags} %%{_make_verbose}
 %ninja_build
 # << build post
 
@@ -185,7 +182,6 @@ rm -rf %{buildroot}
 # >> install pre
 %__install -d -m 0755 "%{buildroot}%{_datadir}/%{name}"
 
-#%%make_install
 %ninja_install
 # << install pre
 
