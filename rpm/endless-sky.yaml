@@ -68,6 +68,7 @@ PkgConfigBR:
   # We have a choice for libglvnd and (mesa-)libGLESv2 to support OpenGL(ES) 3.0:
   # libglvnd
   - glesv2 # includes GLESv3
+  - egl
   - uuid
   - mad
   - libpng

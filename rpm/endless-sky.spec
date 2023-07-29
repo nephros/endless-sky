@@ -25,6 +25,7 @@ Patch2:     %{name}-install-destination.patch
 Patch3:     %{name}-cmake319.patch
 Requires:   %{name}-gamedata-meta  = %{dataversion}
 BuildRequires:  pkgconfig(glesv2)
+BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(mad)
 BuildRequires:  pkgconfig(libpng)
