@@ -69,6 +69,7 @@ PkgConfigBR:
   # libglvnd
   - glesv2 # includes GLESv3
   - egl
+  - wayland-egl
   - uuid
   - mad
   - libpng
