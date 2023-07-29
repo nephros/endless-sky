@@ -155,8 +155,11 @@ export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
 # << build pre
 
 %cmake .  \
-    -DCMAKE_RULE_MESSAGES:BOOL=ON \
+    -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_COLOR_DIAGNOSTICS=OFF \
+    -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+    -DCMAKE_RULE_MESSAGES=ON \
     -DBUILD_TESTING=OFF \
     -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF \
     -DES_USE_VCPKG=OFF \
@@ -172,8 +175,9 @@ export CXXFLAGS="$CXXFLAGS -DGLEW_NO_GLU"
 
 
 # >> build post
-%make_build
+#%%make_build
 #%%{__make} %%{_make_output_sync} %%{?_smp_mflags} %%{_make_verbose}
+%ninja_build
 # << build post
 
 %install
@@ -181,7 +185,8 @@ rm -rf %{buildroot}
 # >> install pre
 %__install -d -m 0755 "%{buildroot}%{_datadir}/%{name}"
 
-%make_install
+#%%make_install
+%ninja_install
 # << install pre
 
 # >> install post
