@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 65ecafdc..e4aebe9d 100644
+index 65ecafdc..6aca13f2 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -144,8 +144,20 @@ endif()
+@@ -144,8 +144,22 @@ endif()
  
  # Link with OpenGL or OpenGL ES.
  if(ES_GLES)
@@ -17,7 +17,9 @@ index 65ecafdc..e4aebe9d 100644
 +		pkg_check_modules(EGL REQUIRED egl)
 +		target_link_libraries(ExternalLibraries INTERFACE "${EGL_LIBRARIES}")
 +		target_include_directories(ExternalLibraries INTERFACE "${EGL_INCLUDE_DIRS}")
-+		#pkg_check_modules(WEGL REQUIRED wayland-egl)
++		pkg_check_modules(WAYLAND REQUIRED wayland-client)
++		target_link_libraries(ExternalLibraries INTERFACE "${WAYLAND_LIBRARIES}")
++		target_include_directories(ExternalLibraries INTERFACE "${WAYLAND_INCLUDE_DIRS}")
 +	else()
 +		find_package(OpenGL REQUIRED OpenGL EGL)
 +		target_link_libraries(ExternalLibraries INTERFACE OpenGL::OpenGL OpenGL::EGL)

@@ -23,6 +23,7 @@ Patches:
    - '%{name}-cmake-no-glew.patch'
    - '%{name}-cmake-gles23.patch'
    - '%{name}-install-destination.patch'
+   - '%{name}-sfos-wayland-orientation.patch'
    # from https://github.com/endless-sky/endless-sky
    - b5e0225ea60c00695c59d8caa8a7a4d48b7bc90c.diff
 Description: |
@@ -73,6 +74,7 @@ PkgConfigBR:
   - glesv2 # includes GLESv3
   - egl
   - wayland-egl
+  - wayland-client
   - libjpeg
   - libpng
   - mad

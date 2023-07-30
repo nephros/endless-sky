@@ -1,0 +1,29 @@
+diff --git a/source/GameWindow.cpp b/source/GameWindow.cpp
+index ee765f8e..10b60866 100644
+--- a/source/GameWindow.cpp
++++ b/source/GameWindow.cpp
+@@ -23,6 +23,9 @@ this program. If not, see <https://www.gnu.org/licenses/>.
+ #include "opengl.h"
+ #include <SDL2/SDL.h>
+ 
++#include <SDL2/SDL_syswm.h>
++#include <wayland-client-protocol.h>
++
+ #include <cstring>
+ #include <sstream>
+ #include <string>
+@@ -135,6 +138,14 @@ bool GameWindow::Init()
+ 		return false;
+ 	}
+ 
++	// Rotate Window in SailfishOS
++	SDL_SysWMinfo swminfo;
++	SDL_VERSION(&swminfo.version)
++	SDL_GetWindowWMInfo(mainWindow, &swminfo);
++	wl_surface *sdl_wl_surface = swminfo.info.wl.surface;
++	SDL_Log("Rotating Wayland display");
++	wl_surface_set_buffer_transform(sdl_wl_surface, WL_OUTPUT_TRANSFORM_90);
++
+ 	// Settings that must be declared before the context creation.
+ 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+ #ifdef _WIN32
