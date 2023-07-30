@@ -25,6 +25,7 @@ Patch0:     %{name}-cmake319.patch
 Patch1:     %{name}-cmake-no-glew.patch
 Patch2:     %{name}-cmake-gles23.patch
 Patch3:     %{name}-install-destination.patch
+Patch4:     b5e0225ea60c00695c59d8caa8a7a4d48b7bc90c.diff
 Requires:   %{name}-gamedata-meta  = %{dataversion}
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(egl)
@@ -166,6 +167,8 @@ Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 %patch2 -p1
 # %{name}-install-destination.patch
 %patch3 -p1
+# b5e0225ea60c00695c59d8caa8a7a4d48b7bc90c.diff
+%patch4 -p1
 # >> setup
 # << setup
 
