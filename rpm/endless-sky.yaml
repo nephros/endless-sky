@@ -129,6 +129,7 @@ SubPackages:
         - '%{name}-gamedata-meta-images2 = %{dataversion}'
         - '%{name}-gamedata-meta-images3 = %{dataversion}'
         - '%{name}-gamedata-meta-images4 = %{dataversion}'
+        - '%{name}-gamedata-meta-images5 = %{dataversion}'
       Files:
         - '%license copyright'
         - '%{_datadir}/%{name}/resources'
@@ -183,6 +184,14 @@ SubPackages:
         - '%{finaldatadir}/images/scene'
         - '%{finaldatadir}/images/ship'
         - '%{finaldatadir}/images/star'
+    - Name: data-images5
+      Summary: Gamedata for %{name}
+      Group: Applications
+      License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
+      BuildArch: noarch
+      Provides:
+        - '%{name}-gamedata-meta-images5  = %{dataversion}'
+      Files:
         - '%{finaldatadir}/images/thumbnail'
         - '%{finaldatadir}/images/ui'
     - Name: data-sounds

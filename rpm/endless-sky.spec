@@ -81,6 +81,7 @@ Requires:   %{name}-gamedata-meta-images1 = %{dataversion}
 Requires:   %{name}-gamedata-meta-images2 = %{dataversion}
 Requires:   %{name}-gamedata-meta-images3 = %{dataversion}
 Requires:   %{name}-gamedata-meta-images4 = %{dataversion}
+Requires:   %{name}-gamedata-meta-images5 = %{dataversion}
 Provides:   %{name}-gamedata-meta  = %{dataversion}
 
 %description data
@@ -128,6 +129,17 @@ Requires:   %{name} = %{version}-%{release}
 Provides:   %{name}-gamedata-meta-images4  = %{dataversion}
 
 %description data-images4
+%{summary}.
+
+%package data-images5
+Summary:    Gamedata for %{name}
+License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
+Group:      Applications
+BuildArch:  noarch
+Requires:   %{name} = %{version}-%{release}
+Provides:   %{name}-gamedata-meta-images5  = %{dataversion}
+
+%description data-images5
 %{summary}.
 
 %package data-sounds
@@ -263,10 +275,15 @@ desktop-file-install --delete-original       \
 %{finaldatadir}/images/scene
 %{finaldatadir}/images/ship
 %{finaldatadir}/images/star
-%{finaldatadir}/images/thumbnail
-%{finaldatadir}/images/ui
 # >> files data-images4
 # << files data-images4
+
+%files data-images5
+%defattr(-,root,root,-)
+%{finaldatadir}/images/thumbnail
+%{finaldatadir}/images/ui
+# >> files data-images5
+# << files data-images5
 
 %files data-sounds
 %defattr(-,root,root,-)
