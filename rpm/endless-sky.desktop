@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Endless Sky
+Comment=Space exploration and combat game
+Comment[de]=Weltraumhandels und Kampfsimulator
+Comment[fr]=Jeu d'exploration et de combat dans l'espace
+Exec=endless-sky
+Icon=endless-sky
+Type=Application
+X-Nemo-Application-Type=generic
+
+# use a profile
+[X-Sailjail]

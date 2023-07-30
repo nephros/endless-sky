@@ -17,6 +17,8 @@ Group:      Applications
 License:    GPLv3+
 URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.gz
+Source1:    %{name}.desktop
+Source2:    %{name}.profile
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-cmake319.patch
@@ -196,13 +198,13 @@ Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 rm -rf %{buildroot}
 # >> install pre
 %__install -d -m 0755 "%{buildroot}%{_datadir}/%{name}"
+%__install -D -m 0644  %{SOURCE1} %{buildroot}%{_datadir}/applications
+%__install -D -m 0644  %{SOURCE2} %{buildroot}%{_sysconfdir}/sailjail/permissions
 
 %ninja_install
 # << install pre
 
 # >> install post
-# Fix invlaid entries:
-sed -i -e '/^Version.*$/d;/^SingleMainWindow/d' %{buildroot}%{_datadir}/applications/*.desktop
 %fdupes %{buildroot}%{_datadir}/%{name}/images
 # move resource data to /home/.system
 %__install -d -m 0755 "%{buildroot}%{finaldatadir}"
@@ -226,6 +228,7 @@ desktop-file-install --delete-original       \
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/endless-sky.png
 %dir %{finaldatadir}
+%config %{_sysconfdir}/sailjail/permissions/%{name}.profile
 %exclude %{_datadir}/doc/endless-sky/*
 %exclude %{_datadir}/man/man6/endless-sky.6.gz
 %exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml
