@@ -205,7 +205,6 @@ Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 rm -rf %{buildroot}
 # >> install pre
 %__install -d -m 0755 "%{buildroot}%{_datadir}/%{name}"
-%__install -D -m 0644  %{SOURCE1} %{buildroot}%{_datadir}/applications
 
 %__install -d -m 0755 "%{buildroot}%{_sysconfdir}/sailjail/permissions"
 %__install -D -m 0644  %{SOURCE2} %{buildroot}%{_sysconfdir}/sailjail/permissions
@@ -214,6 +213,9 @@ rm -rf %{buildroot}
 # << install pre
 
 # >> install post
+# install our own .desktop file
+%__install -d -m 0755 "%{buildroot}%{_datadir}/applications"
+%__install -D -m 0644  %{SOURCE1} %{buildroot}%{_datadir}/applications
 %fdupes %{buildroot}%{_datadir}/%{name}/images
 # move resource data to /home/.system
 %__install -d -m 0755 "%{buildroot}%{finaldatadir}"
