@@ -206,6 +206,8 @@ rm -rf %{buildroot}
 # >> install pre
 %__install -d -m 0755 "%{buildroot}%{_datadir}/%{name}"
 %__install -D -m 0644  %{SOURCE1} %{buildroot}%{_datadir}/applications
+
+%__install -d -m 0755 "%{buildroot}%{_sysconfdir}/sailjail/permissions"
 %__install -D -m 0644  %{SOURCE2} %{buildroot}%{_sysconfdir}/sailjail/permissions
 
 %ninja_install
