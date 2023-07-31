@@ -131,6 +131,7 @@ SubPackages:
       # as OBS mangles the Version of subpackages also, lets create a meta package:
       Provides:
         - '%{name}-gamedata-meta  = %{dataversion}'
+      AutoDepend: false
       Requires:
         - '%{name}-gamedata-meta-sounds  = %{dataversion}'
         - '%{name}-gamedata-meta-images1 = %{dataversion}'
@@ -150,6 +151,7 @@ SubPackages:
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      AutoDepend: false
       Provides:
         - '%{name}-gamedata-meta-images1  = %{dataversion}'
       Files:
@@ -162,6 +164,7 @@ SubPackages:
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      AutoDepend: false     
       Provides:
         - '%{name}-gamedata-meta-images2  = %{dataversion}'
       Files:
@@ -174,6 +177,7 @@ SubPackages:
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      AutoDepend: false
       Provides:
         - '%{name}-gamedata-meta-images3  = %{dataversion}'
       Files:
@@ -186,6 +190,7 @@ SubPackages:
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      AutoDepend: false
       Provides:
         - '%{name}-gamedata-meta-images4  = %{dataversion}'
       Files:
@@ -197,6 +202,7 @@ SubPackages:
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      AutoDepend: false
       Provides:
         - '%{name}-gamedata-meta-images5  = %{dataversion}'
       Files:
@@ -207,6 +213,7 @@ SubPackages:
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
+      AutoDepend: false
       Provides:
         - '%{name}-gamedata-meta-sounds  = %{dataversion}'
       Files:
