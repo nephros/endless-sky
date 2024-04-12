@@ -18,6 +18,13 @@ Macros:
     # save space on rootfs.
     # We should use /home/.system, BUT that has drwx------ root:root permissions ;)
   - 'finaldatadir;/home/.local/share/%{name}'
+  # make source compression quicker, and don't compress the binaries, as they are mostly images:
+  # '_source_payload;w2.xzdio'
+  # '_binary_payload;w0.xzdio'
+Macros2:
+  - |
+        ignore_this;please
+        NoSource: 0-4
 Patches:
    # see https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
    - '%{name}-cmake319.patch'

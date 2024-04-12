@@ -152,6 +152,9 @@ Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 %description data-sounds
 %{summary}.
 
+%define ignore_this please
+NoSource: 0-4
+
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
