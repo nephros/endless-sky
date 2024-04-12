@@ -29,7 +29,6 @@ Patch2:     %{name}-cmake-gles23.patch
 Patch3:     %{name}-install-destination.patch
 Patch4:     %{name}-sfos-wayland-orientation.patch
 Patch5:     b5e0225ea60c00695c59d8caa8a7a4d48b7bc90c.diff
-Patch6:     more-zoom-levels.patch
 Requires:   %{name}-gamedata-meta  = %{dataversion}
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(egl)
@@ -172,8 +171,6 @@ NoSource: 0-4
 %patch4 -p1
 # b5e0225ea60c00695c59d8caa8a7a4d48b7bc90c.diff
 %patch5 -p1
-# more-zoom-levels.patch
-%patch6 -p1
 # >> setup
 # << setup
 
