@@ -19,6 +19,7 @@ URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.gz
 Source1:    %{name}.desktop
 Source2:    %{name}.profile
+Source3:    %{name}.local
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-cmake319.patch
@@ -208,6 +209,8 @@ rm -rf %{buildroot}
 
 %__install -d -m 0755 "%{buildroot}%{_sysconfdir}/sailjail/permissions"
 %__install -D -m 0644  %{SOURCE2} %{buildroot}%{_sysconfdir}/sailjail/permissions
+%__install -d -m 0755 "%{buildroot}%{_sysconfdir}/firejail"
+%__install -D -m 0644  %{SOURCE3} %{buildroot}%{_sysconfdir}/firejail
 
 %ninja_install
 # << install pre
@@ -240,6 +243,7 @@ desktop-file-install --delete-original       \
 %{_datadir}/icons/hicolor/*/apps/endless-sky.png
 %dir %{finaldatadir}
 %config %{_sysconfdir}/sailjail/permissions/%{name}.profile
+%config %{_sysconfdir}/filrejail/%{name}.local
 %exclude %{_datadir}/doc/endless-sky/*
 %exclude %{_datadir}/man/man6/endless-sky.6.gz
 %exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml

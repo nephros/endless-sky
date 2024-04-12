@@ -10,8 +10,18 @@
 
 ### PERMISSIONS
 
-whitelist /home/.local/share/endless-sky
-read-only /home/.local/share/endless-sky
+
+# we need to be able to read
+# /home/.local/share
+# but no stanza in sailjail prfile will make it work.
+# but doing it in firejail config works
+#
+# use bare name without path here! it will look files in /etc/firejail
+include endless-sky.local
+
+# noblacklist /home
+# whitelist /home/.local/share/endless-sky
+# read-only /home/.local/share/endless-sky
 
 whitelist ${HOME}/.local/share/endless-sky
 whitelist ${HOME}/.cache/endless-sky

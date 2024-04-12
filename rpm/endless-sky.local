@@ -1,0 +1,4 @@
+allusers
+noblacklist /home
+noblacklist /home/.local/share/endless-sky
+read-only /home/.local/share/endless-sky

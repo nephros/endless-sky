@@ -10,6 +10,7 @@ Sources:
     - '%{name}-%{version}.tar.gz'
     - '%{name}.desktop'
     - '%{name}.profile'
+    - '%{name}.local'
 Macros:
     # version data separately, so we don't have to reinstall on update.
     # OBS mangles Version with git tags and commits, so we can't use the version macro
@@ -114,6 +115,7 @@ Files:
   - '%dir %{finaldatadir}'
   # sailjail:
   - '%config %{_sysconfdir}/sailjail/permissions/%{name}.profile'
+  - '%config %{_sysconfdir}/filrejail/%{name}.local'
   # installed but useless on SFOS:
   - '%exclude %{_datadir}/doc/endless-sky/*'
   - '%exclude %{_datadir}/man/man6/endless-sky.6.gz'
