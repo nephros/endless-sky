@@ -236,7 +236,7 @@ desktop-file-install --delete-original       \
 %{_datadir}/icons/hicolor/*/apps/endless-sky.png
 %dir %{finaldatadir}
 %config %{_sysconfdir}/sailjail/permissions/%{name}.profile
-%config %{_sysconfdir}/filrejail/%{name}.local
+%config %{_sysconfdir}/firejail/%{name}.local
 %exclude %{_datadir}/doc/endless-sky/*
 %exclude %{_datadir}/man/man6/endless-sky.6.gz
 %exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml
