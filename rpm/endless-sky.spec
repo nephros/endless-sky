@@ -16,7 +16,7 @@ Release:    0
 Group:      Applications
 License:    GPLv3+
 URL:        https://endless-sky.github.io/
-Source0:    %{name}-%{version}.tar.gz
+Source0:    %{name}-%{version}.tar.xz
 Source1:    %{name}.desktop
 Source2:    %{name}.profile
 Source3:    %{name}.local

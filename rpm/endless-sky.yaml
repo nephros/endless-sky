@@ -7,7 +7,7 @@ License: GPLv3+
 URL: https://endless-sky.github.io/
 SCM: https://github.com/nephros/endless-sky
 Sources:
-    - '%{name}-%{version}.tar.gz'
+    - '%{name}-%{version}.tar.xz'
     - '%{name}.desktop'
     - '%{name}.profile'
     - '%{name}.local'
