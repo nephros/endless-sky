@@ -213,6 +213,8 @@ rm -rf %{buildroot}
 # << install pre
 
 # >> install post
+# remove their desktop file, we have our own
+rm -f "%{buildroot}%{_datadir}/applications/io.github.endless_sky.endless_sky.desktop" ||:
 # install our own .desktop file
 %__install -d -m 0755 "%{buildroot}%{_datadir}/applications"
 %__install -D -m 0644  %{SOURCE1} %{buildroot}%{_datadir}/applications
