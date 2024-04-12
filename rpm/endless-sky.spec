@@ -7,11 +7,12 @@ Name:       endless-sky
 
 # >> macros
 # << macros
-%define dataversion 0.10.2
+%define dataversion 0.10.6
+%define hidpidataversion 0.10.6
 %define finaldatadir /home/.local/share/%{name}
 
 Summary:    Space exploration, trading, and combat game
-Version:    0.10.2
+Version:    0.10.6
 Release:    0
 Group:      Applications
 License:    GPLv3+
