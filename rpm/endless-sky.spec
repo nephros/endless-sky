@@ -28,7 +28,6 @@ Patch2:     %{name}-cmake-gles23.patch
 Patch3:     %{name}-install-destination.patch
 Patch4:     %{name}-sfos-wayland-orientation.patch
 Patch5:     b5e0225ea60c00695c59d8caa8a7a4d48b7bc90c.diff
-Requires:   %{name}-gamedata-meta  = %{dataversion}
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(wayland-egl)
@@ -75,82 +74,6 @@ Url:
   Homepage: %{url}
 %endif
 
-
-%package data
-Summary:    Gamedata Meta package for %{name}
-License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
-BuildArch:  noarch
-Requires:   %{name}-gamedata-meta-sounds  = %{dataversion}
-Requires:   %{name}-gamedata-meta-images1 = %{dataversion}
-Requires:   %{name}-gamedata-meta-images2 = %{dataversion}
-Requires:   %{name}-gamedata-meta-images3 = %{dataversion}
-Requires:   %{name}-gamedata-meta-images4 = %{dataversion}
-Requires:   %{name}-gamedata-meta-images5 = %{dataversion}
-Provides:   %{name}-gamedata-meta  = %{dataversion}
-
-%description data
-%{summary}.
-
-%package data-images1
-Summary:    Gamedata for %{name}
-License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
-BuildArch:  noarch
-Provides:   %{name}-gamedata-meta-images1  = %{dataversion}
-
-%description data-images1
-%{summary}.
-
-%package data-images2
-Summary:    Gamedata for %{name}
-License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
-BuildArch:  noarch
-Provides:   %{name}-gamedata-meta-images2  = %{dataversion}
-
-%description data-images2
-%{summary}.
-
-%package data-images3
-Summary:    Gamedata for %{name}
-License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
-BuildArch:  noarch
-Provides:   %{name}-gamedata-meta-images3  = %{dataversion}
-
-%description data-images3
-%{summary}.
-
-%package data-images4
-Summary:    Gamedata for %{name}
-License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
-BuildArch:  noarch
-Provides:   %{name}-gamedata-meta-images4  = %{dataversion}
-
-%description data-images4
-%{summary}.
-
-%package data-images5
-Summary:    Gamedata for %{name}
-License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
-BuildArch:  noarch
-Provides:   %{name}-gamedata-meta-images5  = %{dataversion}
-
-%description data-images5
-%{summary}.
-
-%package data-sounds
-Summary:    Gamedata for %{name}
-License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
-BuildArch:  noarch
-Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
-
-%description data-sounds
-%{summary}.
 
 %define ignore_this please
 NoSource: 0-4
@@ -218,11 +141,11 @@ rm -rf %{buildroot}
 %fdupes %{buildroot}%{_datadir}/%{name}/images
 # move resource data to /home/.system
 %__install -d -m 0755 "%{buildroot}%{finaldatadir}"
-mv %{buildroot}%{_datadir}/%{name}/images %{buildroot}%{finaldatadir}/
-mv %{buildroot}%{_datadir}/%{name}/data %{buildroot}%{finaldatadir}/
-mv %{buildroot}%{_datadir}/%{name}/sounds %{buildroot}%{finaldatadir}/
-mv %{buildroot}%{_datadir}/%{name}/credits.txt %{buildroot}%{finaldatadir}/
-mv %{buildroot}%{_datadir}/%{name}/keys.txt %{buildroot}%{finaldatadir}/
+rm -r %{buildroot}%{_datadir}/%{name}/images
+rm -r %{buildroot}%{_datadir}/%{name}/data
+rm -r %{buildroot}%{_datadir}/%{name}/sounds
+rm -r %{buildroot}%{_datadir}/%{name}/credits.txt
+rm -r %{buildroot}%{_datadir}/%{name}/keys.txt
 ln -s %{finaldatadir} %{buildroot}%{_datadir}/%{name}/resources
 # << install post
 
@@ -245,62 +168,3 @@ desktop-file-install --delete-original       \
 %exclude %{_datadir}/metainfo/io.github.endless_sky.endless_sky.appdata.xml
 # >> files
 # << files
-
-%files data
-%defattr(-,root,root,-)
-%license copyright
-%{_datadir}/%{name}/resources
-%{finaldatadir}/data
-%{finaldatadir}/credits.txt
-%{finaldatadir}/keys.txt
-%dir %{finaldatadir}/images
-# >> files data
-# << files data
-
-%files data-images1
-%defattr(-,root,root,-)
-%{finaldatadir}/images/_menu
-%{finaldatadir}/images/asteroid
-%{finaldatadir}/images/effect
-%{finaldatadir}/images/font
-# >> files data-images1
-# << files data-images1
-
-%files data-images2
-%defattr(-,root,root,-)
-%{finaldatadir}/images/hardpoint
-%{finaldatadir}/images/icon
-%{finaldatadir}/images/label
-%{finaldatadir}/images/land
-# >> files data-images2
-# << files data-images2
-
-%files data-images3
-%defattr(-,root,root,-)
-%{finaldatadir}/images/outfit
-%{finaldatadir}/images/planet
-%{finaldatadir}/images/portrait
-%{finaldatadir}/images/projectile
-# >> files data-images3
-# << files data-images3
-
-%files data-images4
-%defattr(-,root,root,-)
-%{finaldatadir}/images/scene
-%{finaldatadir}/images/ship
-%{finaldatadir}/images/star
-# >> files data-images4
-# << files data-images4
-
-%files data-images5
-%defattr(-,root,root,-)
-%{finaldatadir}/images/thumbnail
-%{finaldatadir}/images/ui
-# >> files data-images5
-# << files data-images5
-
-%files data-sounds
-%defattr(-,root,root,-)
-%{finaldatadir}/sounds
-# >> files data-sounds
-# << files data-sounds
