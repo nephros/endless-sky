@@ -81,7 +81,6 @@ Summary:    Gamedata Meta package for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
 BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
 Requires:   %{name}-gamedata-meta-sounds  = %{dataversion}
 Requires:   %{name}-gamedata-meta-images1 = %{dataversion}
 Requires:   %{name}-gamedata-meta-images2 = %{dataversion}
@@ -98,7 +97,6 @@ Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
 BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
 Provides:   %{name}-gamedata-meta-images1  = %{dataversion}
 
 %description data-images1
@@ -109,7 +107,6 @@ Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
 BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
 Provides:   %{name}-gamedata-meta-images2  = %{dataversion}
 
 %description data-images2
@@ -120,7 +117,6 @@ Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
 BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
 Provides:   %{name}-gamedata-meta-images3  = %{dataversion}
 
 %description data-images3
@@ -131,7 +127,6 @@ Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
 BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
 Provides:   %{name}-gamedata-meta-images4  = %{dataversion}
 
 %description data-images4
@@ -142,7 +137,6 @@ Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
 BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
 Provides:   %{name}-gamedata-meta-images5  = %{dataversion}
 
 %description data-images5
@@ -153,7 +147,6 @@ Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
 Group:      Applications
 BuildArch:  noarch
-Requires:   %{name} = %{version}-%{release}
 Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 
 %description data-sounds
