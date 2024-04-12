@@ -34,6 +34,8 @@ Patches:
    - '%{name}-sfos-wayland-orientation.patch'
    # from https://github.com/endless-sky/endless-sky
    - b5e0225ea60c00695c59d8caa8a7a4d48b7bc90c.diff
+   # suggested in https://github.com/endless-sky/endless-sky/discussions/8071
+   - more-zoom-levels.patch
 Description: |
     Endless Sky is a 2D space trading and combat game similar to the classic
     Escape Velocity series.
