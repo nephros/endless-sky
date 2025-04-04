@@ -87,6 +87,7 @@ Requires:   %{name}-gamedata-meta-images2 = %{dataversion}
 Requires:   %{name}-gamedata-meta-images3 = %{dataversion}
 Requires:   %{name}-gamedata-meta-images4 = %{dataversion}
 Requires:   %{name}-gamedata-meta-images5 = %{dataversion}
+Requires:   %{name}-gamedata-meta-images6 = %{dataversion}
 Provides:   %{name}-gamedata-meta  = %{dataversion}
 
 %description data
@@ -140,6 +141,16 @@ BuildArch:  noarch
 Provides:   %{name}-gamedata-meta-images5  = %{dataversion}
 
 %description data-images5
+%{summary}.
+
+%package data-images6
+Summary:    Gamedata for %{name}
+License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
+Group:      Applications
+BuildArch:  noarch
+Provides:   %{name}-gamedata-meta-images6  = %{dataversion}
+
+%description data-images6
 %{summary}.
 
 %package data-sounds
@@ -294,10 +305,16 @@ desktop-file-install --delete-original       \
 
 %files data-images5
 %defattr(-,root,root,-)
-%{finaldatadir}/images/thumbnail
-%{finaldatadir}/images/ui
+%{finaldatadir}/images/map
 # >> files data-images5
 # << files data-images5
+
+%files data-images6
+%defattr(-,root,root,-)
+%{finaldatadir}/images/thumbnail
+%{finaldatadir}/images/ui
+# >> files data-images6
+# << files data-images6
 
 %files data-sounds
 %defattr(-,root,root,-)
