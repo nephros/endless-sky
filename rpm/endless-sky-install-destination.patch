@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 65ecafd..7081733 100644
+index eb21d7bb..74bf857b 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -258,7 +258,7 @@ elseif(WIN32)
+@@ -274,7 +274,7 @@ elseif(WIN32)
  	install(FILES license.txt DESTINATION .)
  elseif(UNIX)
  	# Install the binary.
@@ -10,8 +10,8 @@ index 65ecafd..7081733 100644
 +	install(TARGETS EndlessSky CONFIGURATIONS Release RUNTIME DESTINATION bin)
  
  	# Install the desktop file.
- 	install(FILES endless-sky.desktop DESTINATION share/applications)
-@@ -284,11 +284,11 @@ elseif(UNIX)
+ 	install(FILES io.github.endless_sky.endless_sky.desktop DESTINATION share/applications)
+@@ -300,11 +300,11 @@ elseif(UNIX)
  	install(FILES ${CMAKE_CURRENT_BINARY_DIR}/endless-sky.6.gz DESTINATION share/man/man6)
  
  	# Install the resource files.
@@ -29,22 +29,26 @@ index 65ecafd..7081733 100644
  	install(FILES changelog DESTINATION share/doc/endless-sky)
  	install(FILES license.txt DESTINATION share/doc/endless-sky)
 diff --git a/source/Files.cpp b/source/Files.cpp
-index 1f72117..7756e45 100644
+index f5dec211..ec22a8ff 100644
 --- a/source/Files.cpp
 +++ b/source/Files.cpp
-@@ -118,11 +118,14 @@ void Files::Init(const char * const *argv)
- 	// the executable, but are under the same prefix (/usr or /usr/local).
- 	static const string LOCAL_PATH = "/usr/local/";
- 	static const string STANDARD_PATH = "/usr/";
--	static const string RESOURCE_PATH = "share/games/endless-sky/";
-+	static const string RESOURCE_PATH = "/home/.local/share/endless-sky/";
-+	/*
- 	if(!resources.compare(0, LOCAL_PATH.length(), LOCAL_PATH))
- 		resources = LOCAL_PATH + RESOURCE_PATH;
- 	else if(!resources.compare(0, STANDARD_PATH.length(), STANDARD_PATH))
- 		resources = STANDARD_PATH + RESOURCE_PATH;
-+	*/
-+	resources = RESOURCE_PATH;
+@@ -102,8 +102,9 @@ void Files::Init(const char * const *argv)
+ 		// the executable, but are under the same prefix (/usr or /usr/local).
+ 		static const filesystem::path LOCAL_PATH = "/usr/local/";
+ 		static const filesystem::path STANDARD_PATH = "/usr/";
+-		static const filesystem::path RESOURCE_PATH = "share/games/endless-sky/";
++		static const filesystem::path RESOURCE_PATH = "/home/.local/share/endless-sky/";
+ 
++		/*
+ 		const auto IsParent = [](const auto parent, const auto child) -> bool {
+ 			if(distance(child.begin(), child.end()) < distance(parent.begin(), parent.end()))
+ 				return false;
+@@ -114,6 +115,8 @@ void Files::Init(const char * const *argv)
+ 			resources = LOCAL_PATH / RESOURCE_PATH;
+ 		else if(IsParent(STANDARD_PATH, resources))
+ 			resources = STANDARD_PATH / RESOURCE_PATH;
++		*/
++		resources = RESOURCE_PATH;
  #endif
+ 	}
  	// If the resources are not here, search in the directories containing this
- 	// one. This allows, for example, a Mac app that does not actually have the
