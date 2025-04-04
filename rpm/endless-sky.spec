@@ -39,6 +39,7 @@ BuildRequires:  pkgconfig(mad)
 BuildRequires:  pkgconfig(openal)
 BuildRequires:  pkgconfig(sdl2)
 BuildRequires:  pkgconfig(uuid)
+BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  git-core
 BuildRequires:  ninja

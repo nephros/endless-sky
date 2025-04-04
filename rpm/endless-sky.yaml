@@ -76,6 +76,7 @@ PkgBR:
   # see   https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
   # actually cmake >= 3.21.0, cmake < 3.26.0
   # cmake >= 3.19.0, cmake < 3.26.0
+  - cmake
   - gcc-c++
   - git-core
   - ninja
