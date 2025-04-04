@@ -23,12 +23,11 @@ Source2:    %{name}.profile
 Source3:    %{name}.local
 Source100:  endless-sky.yaml
 Source101:  endless-sky-rpmlintrc
-Patch0:     %{name}-cmake319.patch
-Patch1:     %{name}-cmake-no-glew.patch
-Patch2:     %{name}-cmake-gles23.patch
-Patch3:     %{name}-install-destination.patch
-Patch4:     %{name}-sfos-wayland-orientation.patch
-Patch5:     b5e0225ea60c00695c59d8caa8a7a4d48b7bc90c.diff
+Patch0:     %{name}-cmake-no-glew.patch
+Patch1:     %{name}-cmake-gles23.patch
+Patch2:     %{name}-install-destination.patch
+Patch3:     %{name}-sfos-wayland-orientation.patch
+Patch4:     b5e0225ea60c00695c59d8caa8a7a4d48b7bc90c.diff
 Requires:   %{name}-gamedata-meta  = %{dataversion}
 BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(egl)
@@ -40,7 +39,6 @@ BuildRequires:  pkgconfig(mad)
 BuildRequires:  pkgconfig(openal)
 BuildRequires:  pkgconfig(sdl2)
 BuildRequires:  pkgconfig(uuid)
-BuildRequires:  cmake >= 3.19.0, cmake < 3.26.0
 BuildRequires:  gcc-c++
 BuildRequires:  git-core
 BuildRequires:  ninja
@@ -159,18 +157,16 @@ NoSource: 0-4
 %prep
 %setup -q -n %{name}-%{version}/upstream
 
-# %{name}-cmake319.patch
-%patch0 -p1
 # %{name}-cmake-no-glew.patch
-%patch1 -p1
+%patch0 -p1
 # %{name}-cmake-gles23.patch
-%patch2 -p1
+%patch1 -p1
 # %{name}-install-destination.patch
-%patch3 -p1
+%patch2 -p1
 # %{name}-sfos-wayland-orientation.patch
-%patch4 -p1
+%patch3 -p1
 # b5e0225ea60c00695c59d8caa8a7a4d48b7bc90c.diff
-%patch5 -p1
+%patch4 -p1
 # >> setup
 # << setup
 

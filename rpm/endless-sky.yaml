@@ -29,7 +29,7 @@ Macros2:
         NoSource: 0-4
 Patches:
    # see https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
-   - '%{name}-cmake319.patch'
+   # '%{name}-cmake319.patch'
    - '%{name}-cmake-no-glew.patch'
    - '%{name}-cmake-gles23.patch'
    - '%{name}-install-destination.patch'
@@ -75,7 +75,7 @@ RpmLintIgnore:
 PkgBR:
   # see   https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
   # actually cmake >= 3.21.0, cmake < 3.26.0
-  - cmake >= 3.19.0, cmake < 3.26.0
+  # cmake >= 3.19.0, cmake < 3.26.0
   - gcc-c++
   - git-core
   - ninja
