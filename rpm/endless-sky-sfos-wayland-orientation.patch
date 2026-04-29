@@ -1,8 +1,8 @@
 diff --git a/source/GameWindow.cpp b/source/GameWindow.cpp
-index ee765f8e..10b60866 100644
+index e2d6e253..72131140 100644
 --- a/source/GameWindow.cpp
 +++ b/source/GameWindow.cpp
-@@ -23,6 +23,9 @@ this program. If not, see <https://www.gnu.org/licenses/>.
+@@ -21,6 +21,9 @@ this program. If not, see <https://www.gnu.org/licenses/>.
  #include "opengl.h"
  #include <SDL2/SDL.h>
  
@@ -12,8 +12,8 @@ index ee765f8e..10b60866 100644
  #include <cstring>
  #include <sstream>
  #include <string>
-@@ -135,6 +138,14 @@ bool GameWindow::Init()
- 		return false;
+@@ -165,6 +168,14 @@ bool GameWindow::Init(bool headless)
+ 		return true;
  	}
  
 +	// Rotate Window in SailfishOS

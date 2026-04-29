@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 65ecafdc..6aca13f2 100644
+index eabf82cb..239e6213 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -144,8 +144,22 @@ endif()
+@@ -194,8 +194,22 @@ endif()
  
  # Link with OpenGL or OpenGL ES.
  if(ES_GLES)
