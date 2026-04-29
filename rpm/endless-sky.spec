@@ -66,8 +66,8 @@ hope to find friendly aliens whose culture is more civilized than your own.
 NOTE: To run this, you need to either install the -data meta-package, or
       provide the game data youself. It is expected to be in /home/.system/usr/share/endless-sky/data
 
-%if "%{?vendor}" == "chum"
-PackageName: Endless Sky
+%if 0%{?_chum}
+Title: Endless Sky
 Type: desktop-application
 DeveloperName: Michael Zahniser
 PackagedBy: nephros
@@ -76,9 +76,14 @@ Categories:
 Custom:
   Repo: https://github.com/endless-sky/endless-sky
   PackagingRepo: https://github.com/nephros/endless-sky
-Icon: https://github.com/endless-sky/endless-sky/blob/master/icons/icon_128x128.png?raw=true
-Url:
+Icon: https://github.com/endless-sky/endless-sky/raw/master/icons/icon_128x128.png
+Screenshots:
+  - https://endless-sky.github.io/images/screenshots/battle.jpg
+  - https://endless-sky.github.io/images/screenshots/pirates.jpg
+  - https://endless-sky.github.io/images/screenshots/shipyard.jpg
+Links:
   Homepage: %{url}
+  Help:     https://github.com/endless-sky/endless-sky/wiki/PlayersManual
 %endif
 
 
