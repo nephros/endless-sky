@@ -42,6 +42,7 @@ BuildRequires:  pkgconfig(sdl2)
 BuildRequires:  pkgconfig(uuid)
 BuildRequires:  pkgconfig(libavif)
 BuildRequires:  pkgconfig(flac++)
+BuildRequires:  pkgconfig(minizip)
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  git-core

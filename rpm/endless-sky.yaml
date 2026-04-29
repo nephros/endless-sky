@@ -94,6 +94,7 @@ PkgConfigBR:
   - uuid
   - libavif
   - flac++
+  - minizip
 Configure: cmake
 ConfigOptions:
   - '-G Ninja'
