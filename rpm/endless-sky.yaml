@@ -25,6 +25,7 @@ Macros:
   # '_binary_payload;w0.xzdio'
   - orgname;io.github.endless_sky
   - appname;endless_sky
+  - '_unpackaged_files_terminate_build;0'
 Macros2:
   - |
         please_ignore;this macro

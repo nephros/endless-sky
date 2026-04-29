@@ -12,6 +12,7 @@ Name:       endless-sky
 %define finaldatadir /home/.local/share/%{name}
 %define orgname io.github.endless_sky
 %define appname endless_sky
+%define _unpackaged_files_terminate_build 0
 
 Summary:    Space exploration, trading, and combat game
 Version:    0.10.16
