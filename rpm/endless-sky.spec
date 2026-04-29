@@ -7,14 +7,14 @@ Name:       endless-sky
 
 # >> macros
 # << macros
-%define dataversion 0.10.6
-%define hidpidataversion 0.10.12
+%define dataversion 0.10.16
+%define hidpidataversion 0.10.16
 %define finaldatadir /home/.local/share/%{name}
 %define orgname io.github.endless_sky
 %define appname endless_sky
 
 Summary:    Space exploration, trading, and combat game
-Version:    0.10.12
+Version:    0.10.16
 Release:    0
 Group:      Applications
 License:    GPLv3+
@@ -165,7 +165,7 @@ Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 %description data-sounds
 %{summary}.
 
-%define ignore_this please
+%define please_ignore this macro
 NoSource: 0-4
 
 %prep
@@ -210,7 +210,6 @@ NoSource: 0-4
 # << build post
 
 %install
-rm -rf %{buildroot}
 # >> install pre
 %__install -d -m 0755 "%{buildroot}%{_datadir}/%{name}"
 
@@ -244,7 +243,6 @@ desktop-file-install --delete-original       \
    %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
-%defattr(-,root,root,-)
 %license license.txt
 %license copyright
 %{_bindir}/%{name}
@@ -260,7 +258,6 @@ desktop-file-install --delete-original       \
 # << files
 
 %files data
-%defattr(-,root,root,-)
 %license copyright
 %{_datadir}/%{name}/resources
 %{finaldatadir}/data
@@ -271,7 +268,6 @@ desktop-file-install --delete-original       \
 # << files data
 
 %files data-images1
-%defattr(-,root,root,-)
 %{finaldatadir}/images/_menu
 %{finaldatadir}/images/asteroid
 %{finaldatadir}/images/effect
@@ -280,7 +276,6 @@ desktop-file-install --delete-original       \
 # << files data-images1
 
 %files data-images2
-%defattr(-,root,root,-)
 %{finaldatadir}/images/hardpoint
 %{finaldatadir}/images/icon
 %{finaldatadir}/images/label
@@ -289,7 +284,6 @@ desktop-file-install --delete-original       \
 # << files data-images2
 
 %files data-images3
-%defattr(-,root,root,-)
 %{finaldatadir}/images/outfit
 %{finaldatadir}/images/planet
 %{finaldatadir}/images/portrait
@@ -298,7 +292,6 @@ desktop-file-install --delete-original       \
 # << files data-images3
 
 %files data-images4
-%defattr(-,root,root,-)
 %{finaldatadir}/images/scene
 %{finaldatadir}/images/ship
 %{finaldatadir}/images/star
@@ -306,20 +299,17 @@ desktop-file-install --delete-original       \
 # << files data-images4
 
 %files data-images5
-%defattr(-,root,root,-)
 %{finaldatadir}/images/map
 # >> files data-images5
 # << files data-images5
 
 %files data-images6
-%defattr(-,root,root,-)
 %{finaldatadir}/images/thumbnail
 %{finaldatadir}/images/ui
 # >> files data-images6
 # << files data-images6
 
 %files data-sounds
-%defattr(-,root,root,-)
 %{finaldatadir}/sounds
 # >> files data-sounds
 # << files data-sounds

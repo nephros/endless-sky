@@ -1,6 +1,6 @@
 Name: endless-sky
 Summary: Space exploration, trading, and combat game
-Version: 0.10.12 # !! remember to update the metadata version below as well!
+Version: 0.10.16 # !! remember to update the metadata version below as well!
 Release: 0
 Group: Applications
 License: GPLv3+
@@ -14,9 +14,9 @@ Sources:
 Macros:
     # version data separately, so we don't have to reinstall on update.
     # OBS mangles Version with git tags and commits, so we can't use the version macro
-  - 'dataversion;0.10.6'
+  - 'dataversion;0.10.16'
   # in case we want to ship the hi dpi plugin/overlay at some point
-  - 'hidpidataversion;0.10.12'
+  - 'hidpidataversion;0.10.16'
     # save space on rootfs.
     # We should use /home/.system, BUT that has drwx------ root:root permissions ;)
   - 'finaldatadir;/home/.local/share/%{name}'
@@ -27,7 +27,7 @@ Macros:
   - appname;endless_sky
 Macros2:
   - |
-        ignore_this;please
+        please_ignore;this macro
         NoSource: 0-4
 Patches:
    # see https://irclogs.sailfishos.org/logs/%23sailfishos/latest.log.html
@@ -181,7 +181,7 @@ SubPackages:
       Group: Applications
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
-      AutoDepend: false     
+      AutoDepend: false
       Provides:
         - '%{name}-gamedata-meta-images2  = %{dataversion}'
       Files:
