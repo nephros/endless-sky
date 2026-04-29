@@ -24,7 +24,6 @@ Source1:    %{name}.desktop
 Source2:    %{name}.profile
 Source3:    %{name}.local
 Source100:  endless-sky.yaml
-Source101:  endless-sky-rpmlintrc
 Patch0:     %{name}-cmake-no-glew.patch
 Patch1:     %{name}-cmake-gles23.patch
 Patch2:     %{name}-install-destination.patch
