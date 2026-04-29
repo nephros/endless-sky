@@ -23,6 +23,8 @@ Macros:
   # make source compression quicker, and don't compress the binaries, as they are mostly images:
   # '_source_payload;w2.xzdio'
   # '_binary_payload;w0.xzdio'
+  - orgname;io.github.endless_sky
+  - appname;endless_sky
 Macros2:
   - |
         ignore_this;please

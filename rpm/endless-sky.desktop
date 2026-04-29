@@ -10,5 +10,5 @@ X-Nemo-Application-Type=generic
 
 # use a profile
 [X-Sailjail]
-OrganizationName=endless-sky
-ApplicationName=endless-sky
+OrganizationName=io.github.endless_sky
+ApplicationName=endless_sky

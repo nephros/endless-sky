@@ -10,6 +10,8 @@ Name:       endless-sky
 %define dataversion 0.10.6
 %define hidpidataversion 0.10.12
 %define finaldatadir /home/.local/share/%{name}
+%define orgname io.github.endless_sky
+%define appname endless_sky
 
 Summary:    Space exploration, trading, and combat game
 Version:    0.10.12
