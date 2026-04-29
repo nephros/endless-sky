@@ -289,7 +289,6 @@ desktop-file-install --delete-original       \
 %files data-images3
 %{finaldatadir}/images/outfit
 %{finaldatadir}/images/planet
-%{finaldatadir}/images/portrait
 %{finaldatadir}/images/projectile
 # >> files data-images3
 # << files data-images3

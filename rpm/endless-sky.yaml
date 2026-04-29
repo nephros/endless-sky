@@ -201,7 +201,7 @@ SubPackages:
       Files:
         - '%{finaldatadir}/images/outfit'
         - '%{finaldatadir}/images/planet'
-        - '%{finaldatadir}/images/portrait'
+        # '%{finaldatadir}/images/portrait'
         - '%{finaldatadir}/images/projectile'
     - Name: data-images4
       Summary: Gamedata for %{name}
