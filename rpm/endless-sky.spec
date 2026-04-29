@@ -253,6 +253,8 @@ desktop-file-install --delete-original       \
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/endless-sky.png
 %dir %{finaldatadir}
+%dir %{finaldatadir}/shaders/
+%{finaldatadir}/shaders/*
 %config %{_sysconfdir}/sailjail/permissions/%{name}.profile
 %config %{_sysconfdir}/firejail/%{name}.local
 %exclude %{_datadir}/doc/endless-sky/*
