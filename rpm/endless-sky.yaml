@@ -97,6 +97,7 @@ PkgConfigBR:
   - sdl2
   - uuid
   - libavif
+  - pkgconfig(flac++)
 Configure: cmake
 ConfigOptions:
   - '-G Ninja'
