@@ -17,7 +17,7 @@ Name:       endless-sky
 Summary:    Space exploration, trading, and combat game
 Version:    0.10.16
 Release:    0
-Group:      Applications
+Group:      Amusements/Games
 License:    GPLv3+
 URL:        https://endless-sky.github.io/
 Source0:    %{name}-%{version}.tar.xz
@@ -85,7 +85,7 @@ Url:
 %package data
 Summary:    Gamedata Meta package for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
+Group:      Amusements/Games
 BuildArch:  noarch
 Requires:   %{name}-gamedata-meta-sounds  = %{dataversion}
 Requires:   %{name}-gamedata-meta-images1 = %{dataversion}
@@ -102,7 +102,7 @@ Provides:   %{name}-gamedata-meta  = %{dataversion}
 %package data-images1
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
+Group:      Amusements/Games
 BuildArch:  noarch
 Provides:   %{name}-gamedata-meta-images1  = %{dataversion}
 
@@ -112,7 +112,7 @@ Provides:   %{name}-gamedata-meta-images1  = %{dataversion}
 %package data-images2
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
+Group:      Amusements/Games
 BuildArch:  noarch
 Provides:   %{name}-gamedata-meta-images2  = %{dataversion}
 
@@ -122,7 +122,7 @@ Provides:   %{name}-gamedata-meta-images2  = %{dataversion}
 %package data-images3
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
+Group:      Amusements/Games
 BuildArch:  noarch
 Provides:   %{name}-gamedata-meta-images3  = %{dataversion}
 
@@ -132,7 +132,7 @@ Provides:   %{name}-gamedata-meta-images3  = %{dataversion}
 %package data-images4
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
+Group:      Amusements/Games
 BuildArch:  noarch
 Provides:   %{name}-gamedata-meta-images4  = %{dataversion}
 
@@ -142,7 +142,7 @@ Provides:   %{name}-gamedata-meta-images4  = %{dataversion}
 %package data-images5
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
+Group:      Amusements/Games
 BuildArch:  noarch
 Provides:   %{name}-gamedata-meta-images5  = %{dataversion}
 
@@ -152,7 +152,7 @@ Provides:   %{name}-gamedata-meta-images5  = %{dataversion}
 %package data-images6
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
+Group:      Amusements/Games
 BuildArch:  noarch
 Provides:   %{name}-gamedata-meta-images6  = %{dataversion}
 
@@ -162,7 +162,7 @@ Provides:   %{name}-gamedata-meta-images6  = %{dataversion}
 %package data-sounds
 Summary:    Gamedata for %{name}
 License:    GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
-Group:      Applications
+Group:      Amusements/Games
 BuildArch:  noarch
 Provides:   %{name}-gamedata-meta-sounds  = %{dataversion}
 

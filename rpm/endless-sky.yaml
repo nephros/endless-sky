@@ -2,7 +2,7 @@ Name: endless-sky
 Summary: Space exploration, trading, and combat game
 Version: 0.10.16 # !! remember to update the metadata version below as well!
 Release: 0
-Group: Applications
+Group: Amusements/Games
 License: GPLv3+
 URL: https://endless-sky.github.io/
 SCM: https://github.com/nephros/endless-sky
@@ -143,7 +143,7 @@ Requires:
 SubPackages:
     - Name: data
       Summary: Gamedata Meta package for %{name}
-      Group: Applications
+      Group: Amusements/Games
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       # as OBS mangles the Version of subpackages also, lets create a meta package:
@@ -165,9 +165,10 @@ SubPackages:
         - '%{finaldatadir}/credits.txt'
         - '%{finaldatadir}/keys.txt'
         - '%dir %{finaldatadir}/images'
+
     - Name: data-images1
       Summary: Gamedata for %{name}
-      Group: Applications
+      Group: Amusements/Games
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       AutoDepend: false
@@ -180,7 +181,7 @@ SubPackages:
         - '%{finaldatadir}/images/font'
     - Name: data-images2
       Summary: Gamedata for %{name}
-      Group: Applications
+      Group: Amusements/Games
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       AutoDepend: false
@@ -193,7 +194,7 @@ SubPackages:
         - '%{finaldatadir}/images/land'
     - Name: data-images3
       Summary: Gamedata for %{name}
-      Group: Applications
+      Group: Amusements/Games
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       AutoDepend: false
@@ -206,7 +207,7 @@ SubPackages:
         - '%{finaldatadir}/images/projectile'
     - Name: data-images4
       Summary: Gamedata for %{name}
-      Group: Applications
+      Group: Amusements/Games
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       AutoDepend: false
@@ -218,7 +219,7 @@ SubPackages:
         - '%{finaldatadir}/images/star'
     - Name: data-images5
       Summary: Gamedata for %{name}
-      Group: Applications
+      Group: Amusements/Games
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       AutoDepend: false
@@ -228,7 +229,7 @@ SubPackages:
         - '%{finaldatadir}/images/map'
     - Name: data-images6
       Summary: Gamedata for %{name}
-      Group: Applications
+      Group: Amusements/Games
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       AutoDepend: false
@@ -239,7 +240,7 @@ SubPackages:
         - '%{finaldatadir}/images/ui'
     - Name: data-sounds
       Summary: Gamedata for %{name}
-      Group: Applications
+      Group: Amusements/Games
       License: GPLv2 and CC0 and CC-BY-SA-4.0 and CC-BY-SA-2.0 and CC-BY-SA-3.0 and public-domain
       BuildArch: noarch
       AutoDepend: false
