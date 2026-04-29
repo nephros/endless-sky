@@ -79,6 +79,8 @@ PkgBR:
   - git-core
   - ninja
   - fdupes
+  # minizip-devel does not depend on this, leading to '/usr/bin/ld: cannot find -lminizip: No such file or directory'
+  - minizip
 PkgConfigBR:
   # We have a choice for libglvnd and (mesa-)libGLESv2 to support OpenGL(ES) 3.0:
   # libglvnd

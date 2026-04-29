@@ -48,6 +48,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  git-core
 BuildRequires:  ninja
 BuildRequires:  fdupes
+BuildRequires:  minizip
 BuildRequires:  desktop-file-utils
 
 %description
