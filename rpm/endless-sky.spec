@@ -41,6 +41,7 @@ BuildRequires:  pkgconfig(mad)
 BuildRequires:  pkgconfig(openal)
 BuildRequires:  pkgconfig(sdl2)
 BuildRequires:  pkgconfig(uuid)
+BuildRequires:  pkgconfig(libavif)
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  git-core

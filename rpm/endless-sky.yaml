@@ -96,6 +96,7 @@ PkgConfigBR:
   - openal
   - sdl2
   - uuid
+  - libavif
 Configure: cmake
 ConfigOptions:
   - '-G Ninja'
