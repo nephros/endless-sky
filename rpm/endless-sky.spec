@@ -236,6 +236,7 @@ rm -f "%{buildroot}%{_datadir}/applications/io.github.endless_sky.endless_sky.de
 %__install -d -m 0755 "%{buildroot}%{finaldatadir}"
 mv %{buildroot}%{_datadir}/%{name}/images %{buildroot}%{finaldatadir}/
 mv %{buildroot}%{_datadir}/%{name}/data %{buildroot}%{finaldatadir}/
+mv %{buildroot}%{_datadir}/%{name}/shaders %{buildroot}%{finaldatadir}/
 mv %{buildroot}%{_datadir}/%{name}/sounds %{buildroot}%{finaldatadir}/
 mv %{buildroot}%{_datadir}/%{name}/credits.txt %{buildroot}%{finaldatadir}/
 mv %{buildroot}%{_datadir}/%{name}/keys.txt %{buildroot}%{finaldatadir}/
@@ -253,7 +254,7 @@ desktop-file-install --delete-original       \
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/endless-sky.png
 %dir %{finaldatadir}
-%dir %{finaldatadir}/shaders/
+%dir %{finaldatadir}/shaders
 %{finaldatadir}/shaders/*
 %config %{_sysconfdir}/sailjail/permissions/%{name}.profile
 %config %{_sysconfdir}/firejail/%{name}.local
